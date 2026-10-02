@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>حسابات تيك توك الإعلانية للوكالات | اسم العلامة</title>
-<meta name="description" content="حسابات إعلانية وكالية على تيك توك: إطلاق أسرع، استقرار أعلى، شحن رصيد مرن ودعم مخصص لحملاتك في الأسواق العالمية.">
+<title>حسابات TikTok Agency الإعلانية | اسم العلامة</title>
+<meta name="description" content="حسابات TikTok Agency الإعلانية: إطلاق أسرع، استقرار أعلى، Cashback على الإنفاق، شحن رصيد مرن ودعم مخصص لحملاتك.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -146,9 +146,73 @@ section{padding:80px 0}
 .step-tab[aria-selected=true] small{display:block}
 .step-tab .arrow{transition:.3s;color:var(--line-3);flex:0 0 24px}
 .step-tab[aria-selected=true] .arrow{transform:rotate(90deg)}
-.step-panel{flex:1;aspect-ratio:627/456;border-radius:15px;overflow:hidden;border:1px solid var(--line)}
+.step-panels{flex:1;min-width:0;width:100%}
+.step-panel{width:100%;aspect-ratio:640/470;border-radius:15px;overflow:hidden;border:1px solid var(--line);position:relative;background:#f5f6f8}
 .step-panel[hidden]{display:none}
-@media (max-width:1024px){.steps{flex-direction:column}.step-tabs{flex:auto;width:100%}.step-tab small{display:block}.step-panels{display:none}}
+.mock{position:absolute;top:0;left:0;width:640px;height:470px;transform-origin:0 0;direction:ltr;font-family:Inter,"Segoe UI",system-ui,sans-serif;font-size:12px;color:#161823;line-height:1.35;text-align:left}
+.mock *{box-sizing:border-box}
+.m-bar{height:30px;background:#e9ebee;display:flex;align-items:center;gap:6px;padding:0 12px}
+.m-bar i{width:9px;height:9px;border-radius:50%;background:#ff5f57}.m-bar i:nth-child(2){background:#febc2e}.m-bar i:nth-child(3){background:#28c840}
+.m-url{margin-left:14px;flex:1;height:18px;border-radius:9px;background:#fff;color:#8a8b91;font-size:10px;display:flex;align-items:center;padding:0 10px}
+.m-top{height:40px;background:#fff;border-bottom:1px solid #e3e3e4;display:flex;align-items:center;justify-content:space-between;padding:0 16px}
+.m-brand{display:flex;align-items:center;gap:7px;font-weight:700;font-size:13px}
+.m-brand b{width:20px;height:20px;border-radius:5px;background:#161823;display:grid;place-items:center}
+.m-brand b::before{content:"";width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#25f4ee,#fe2c55)}
+.m-tabs{display:flex;gap:18px;color:#54565e;font-weight:500}.m-tabs .on{color:#161823;box-shadow:inset 0 -2px #fe2c55;padding-bottom:11px;margin-bottom:-12px}
+.m-av{width:24px;height:24px;border-radius:50%;background:#dfe1e5}
+.m-body{display:flex;height:400px}
+.m-side{width:130px;background:#fff;border-right:1px solid #e3e3e4;padding:12px 8px;display:flex;flex-direction:column;gap:3px}
+.m-side span{padding:7px 10px;border-radius:6px;color:#54565e;font-weight:500}.m-side .on{background:#fff0f3;color:#fe2c55}
+.m-main{flex:1;padding:16px 18px;position:relative;overflow:hidden}
+.m-h{font-size:15px;font-weight:700;margin-bottom:10px}
+.m-steps{display:flex;gap:8px;margin-bottom:12px}
+.m-steps span{flex:1;border-top:3px solid #e3e3e4;padding-top:5px;color:#8a8b91;font-size:10.5px;font-weight:600}
+.m-steps .done{border-color:#fe2c55;color:#161823}
+.m-card{background:#fff;border:1px solid #e3e3e4;border-radius:8px;padding:12px}
+.m-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}
+.m-f label{display:block;font-size:10.5px;color:#54565e;font-weight:600;margin-bottom:4px}
+.m-in{height:28px;border:1px solid #d6d7da;border-radius:4px;padding:0 9px;display:flex;align-items:center;justify-content:space-between;background:#fff}
+.m-in.foc{border-color:#fe2c55;box-shadow:0 0 0 2px #ffe3e9}
+.m-chips{display:flex;gap:5px;flex-wrap:wrap}.m-chips em{font-style:normal;background:#f1f1f2;border-radius:4px;padding:3px 7px;font-size:10.5px}
+.m-chk{display:flex;align-items:center;gap:7px;margin:12px 0 0;color:#54565e}
+.m-chk b{width:13px;height:13px;border-radius:3px;background:#fe2c55;display:grid;place-items:center;color:#fff;font-size:9px}
+.m-btn{display:inline-flex;align-items:center;justify-content:center;height:30px;padding:0 16px;border-radius:4px;background:#fe2c55;color:#fff;font-weight:600}
+.m-btn.gh{background:#fff;border:1px solid #d6d7da;color:#161823}
+.m-row{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
+.m-toast{position:absolute;right:16px;bottom:16px;background:#161823;color:#fff;border-radius:8px;padding:9px 12px;display:flex;align-items:center;gap:8px;box-shadow:0 10px 30px rgba(0,0,0,.25);font-weight:500}
+.m-dot{width:8px;height:8px;border-radius:50%;background:#ffb800;box-shadow:0 0 0 3px rgba(255,184,0,.25)}
+.m-dot.ok{background:#00c48c;box-shadow:0 0 0 3px rgba(0,196,140,.25)}
+.m-bal{display:flex;gap:10px;margin-bottom:10px}
+.m-bal .m-card{flex:1}
+.m-k{color:#54565e;font-size:10.5px;font-weight:600}.m-v{font-size:19px;font-weight:700;margin-top:3px}
+.m-v small{font-size:10px;color:#00a676;font-weight:600;margin-left:4px}
+.m-pay{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0 10px}
+.m-pay span{border:1px solid #d6d7da;border-radius:6px;padding:9px 6px;text-align:center;font-weight:600;font-size:11px}
+.m-pay .on{border-color:#fe2c55;background:#fff0f3;color:#fe2c55}
+.m-sum{display:flex;justify-content:space-between;padding:4px 0;color:#54565e}.m-sum.t{color:#161823;font-weight:700;border-top:1px solid #e3e3e4;margin-top:4px;padding-top:7px}
+.m-obj{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.m-obj span{border:1px solid #d6d7da;border-radius:6px;padding:9px;font-weight:600;font-size:11px;display:flex;gap:7px;align-items:center}
+.m-obj span::before{content:"";width:12px;height:12px;border-radius:50%;border:1.5px solid #b7b8bd;flex:0 0 12px}
+.m-obj .on{border-color:#fe2c55;background:#fff0f3}.m-obj .on::before{border:4px solid #fe2c55}
+.m-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.m-kpi .m-card{padding:9px 10px}.m-kpi .m-v{font-size:16px}
+.m-split{display:flex;gap:14px;height:100%}
+.m-split>div:first-child{flex:1;min-width:0}
+.phone{width:170px;flex:0 0 170px;height:350px;border-radius:24px;background:#000;padding:6px;box-shadow:0 14px 30px rgba(0,0,0,.25);align-self:center}
+.screen{position:relative;width:100%;height:100%;border-radius:19px;overflow:hidden;background:linear-gradient(160deg,#3b1d5a 0,#a8245a 45%,#f2994a 100%);color:#fff}
+.screen .prod{position:absolute;left:34px;top:92px;width:80px;height:100px;border-radius:14px;background:rgba(255,255,255,.92);box-shadow:0 10px 25px rgba(0,0,0,.3)}
+.screen .prod::after{content:"";position:absolute;inset:18px 18px 34px;border-radius:8px;background:linear-gradient(135deg,#25f4ee,#fe2c55)}
+.screen .feed{position:absolute;top:10px;left:0;right:0;text-align:center;font-size:10px;font-weight:600;opacity:.9}
+.screen .feed u{text-decoration:none;border-bottom:2px solid #fff;padding-bottom:2px}
+.rail{position:absolute;right:7px;bottom:72px;display:flex;flex-direction:column;align-items:center;gap:9px;font-size:8px;font-weight:600}
+.rail i{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.25);display:block}
+.rail i.av{background:#fff;border:2px solid #fff}
+.rail i.hr{background:transparent}
+.rail i.hr::before{content:"♥";font-style:normal;font-size:21px;line-height:22px;color:#fe2c55;display:block;text-align:center}
+.cap{position:absolute;left:9px;right:38px;bottom:38px;font-size:9px}
+.cap b{font-size:10px;display:block}.cap em{font-style:normal;background:rgba(0,0,0,.35);border-radius:3px;padding:1px 4px;font-size:8px}
+.cta-bar{position:absolute;left:8px;right:8px;bottom:9px;height:22px;border-radius:4px;background:#fe2c55;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
+@media (max-width:1024px){.steps{flex-direction:column}.step-tabs{flex:auto;width:100%}.step-tab small{display:block}}
 
 /* Why us */
 .why{background:linear-gradient(180deg,var(--bg) 0,var(--bg-2) 100%)}
@@ -158,7 +222,7 @@ section{padding:80px 0}
 .why-copy h2{color:#312b2b;font-size:32px;margin-bottom:52px}
 .why-item{display:flex;gap:16px;padding:20px 0;border-top:1px solid #dddada}
 .why-item h3{color:#312b2b;font-size:20px;font-weight:600;margin-bottom:8px}
-.why-art{flex:0 1 560px}
+.why-art{flex:0 1 560px;min-width:0;width:100%}.why-art svg{width:100%;height:auto}
 @media (max-width:1024px){.why-box{flex-direction:column;padding:20px}.why-copy{flex:auto}.why-copy h2{font-size:24px;margin-bottom:24px}}
 
 /* Testimonials */
@@ -204,7 +268,7 @@ section{padding:80px 0}
 .f-body hr{border:0;border-top:1px solid #bbb9b9;margin:12px 0 20px}
 .f-links{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 20px}
 .f-links a:hover{color:#fff}
-.f-social{display:flex;gap:48px}
+.f-social{display:flex;flex-wrap:wrap;gap:16px 40px}
 .f-social a{color:#d5d5d5}.f-social a:hover{color:#fff}
 .copy{background:#101010;padding:10px 0;font-size:14px;color:#fff}
 @media (max-width:767px){.f-body{width:100%}.f-links{grid-template-columns:1fr}}
@@ -240,9 +304,9 @@ section{padding:80px 0}
     <div class="hero-copy">
       <div class="chip">
         <span class="chip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5A2.6 2.6 0 0 1 7.26 15.3c0-1.72 1.66-3.01 3.37-2.48V9.66C7.18 9.2 4.16 11.88 4.16 15.3 4.16 18.63 6.92 21 9.85 21c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48Z"/></svg></span>
-        خدمات تيك توك
+        خدمات TikTok
       </div>
-      <h1>انطلق إلى الأسواق العالمية مع <span>حسابات تيك توك الإعلانية الوكالية المميزة</span></h1>
+      <h1>انطلق إلى الأسواق العالمية مع <span>حسابات TikTok Agency الإعلانية المميزة</span></h1>
       <p class="hero-sub">وسّع حملاتك بلا قيود، وتجنّب الإيقاف المفاجئ، وأدر إعلاناتك على حسابات مستقرة وموثوقة.</p>
       <div><a href="#contact" class="btn">احصل على حسابك
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12m0 0-4.5-4.5M15 9l-4.5 4.5" stroke="#ffe1e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
@@ -274,7 +338,7 @@ section{padding:80px 0}
   <div class="container">
     <div class="section-head">
       <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>المشكلات</span>
-      <h2>هل تشعر بالإحباط لأن إعلانات تيك توك لا تحقق النتائج المتوقعة؟</h2>
+      <h2>هل تشعر بالإحباط لأن إعلانات TikTok لا تحقق النتائج المتوقعة؟</h2>
       <p>قيود الحسابات وعدم استقرارها وغياب الدعم تُعيق حملاتك عن النمو.</p>
     </div>
     <div class="grid g4">
@@ -291,14 +355,14 @@ section{padding:80px 0}
   <div class="container">
     <div class="section-head">
       <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>الميزة الأساسية</span>
-      <h2>توقّف عن القلق بشأن الإعلانات وابدأ مع حسابات تيك توك الوكالية</h2>
-      <p>استفد من ميزات متقدمة واستقرار أعلى، ووسّع حملاتك عالميًا عبر حسابات إعلانية بمستوى الوكالات.</p>
+      <h2>توقّف عن القلق بشأن الإعلانات وابدأ مع حسابات TikTok Agency</h2>
+      <p>استفد من ميزات متقدمة واستقرار أعلى، ووسّع حملاتك عالميًا عبر حسابات إعلانية بمستوى الـ Agency.</p>
     </div>
     <div class="grid g3">
       <div class="card benefit"><svg class="ico" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M31 24H4V5a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v21a2 2 0 0 0 2 2h29a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1Zm-2-18h-7.38c-1.34 0-2 1.62-1.06 2.56l2.03 2.03L18 15.17l-4.59-4.58a2 2 0 0 0-2.82 0l-4.3 4.29a1 1 0 0 0 0 1.41l1.42 1.42a1 1 0 0 0 1.41 0L12 14.83l4.59 4.58a2 2 0 0 0 2.82 0l6-6 2.03 2.03c.94.94 2.56.28 2.56-1.06V7a1 1 0 0 0-1-1Z"/></svg><h4>توسّع بلا حدود</h4><p>أزِل القيود ووسّع حملاتك بحرية</p></div>
       <div class="card benefit"><svg class="ico" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M23 2.6c1.4 0 2.3 1.3 2 2.5l-.1.3-3.3 8.6h4c1.6 0 2.5 1.7 1.8 3l-.2.2-12 16.1c-.8 1.2-2.6.4-2.4-1l1.2-11H9.7c-1.5 0-2.4-1.5-1.9-2.8l6.3-14.6A2 2 0 0 1 15.9 2.6H23Z"/></svg><h4>موافقة أسرع على الإعلانات</h4><p>أطلق حملاتك بسرعة دون تأخير في المراجعة</p></div>
       <div class="card benefit"><svg class="ico" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M22.5 27c.2 0 .5-.1.6-.3.2-.2.3-.4.3-.6V5.9c0-.2-.1-.3-.1-.5a.9.9 0 0 0-1.3-.3L4.5 15.2a.9.9 0 0 0 0 1.6L22 26.9c.2.1.3.1.5.1ZM28 5h-1.8v22H28V5Z"/></svg><h4>عرض إعلانات متواصل</h4><p>استبدال فوري للحسابات للحفاظ على استمرارية الحملة</p></div>
-      <div class="card benefit"><svg class="ico" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M29 1.1c-.9 0-1.7.8-1.7 1.7v24.7H1.7C.8 27.5 0 28.3 0 29.2s.8 1.7 1.7 1.7h25.6c1.9 0 3.4-1.5 3.4-3.4V2.8c0-.9-.8-1.7-1.7-1.7Z"/><path d="M25.1 11a1.7 1.7 0 0 0-2.4 0L17 16.6 11.4 11h-.1a1.7 1.7 0 0 0-2.3.1l-5.6 5.6v-1.5a1.7 1.7 0 1 0-3.4 0v5.5c0 .9.8 1.7 1.7 1.7h5.5a1.7 1.7 0 1 0 0-3.4H5.8L10.2 14.6l5.6 5.6c.7.7 1.7.7 2.4 0l6.8-6.8a1.7 1.7 0 0 0 .1-2.4Z"/></svg><h4>تكاليف إعلانية أقل</h4><p>خفّض تكلفة الاكتساب ومعدل الألف ظهور وحسّن الكفاءة</p></div>
+      <div class="card benefit"><svg class="ico" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M29 1.1c-.9 0-1.7.8-1.7 1.7v24.7H1.7C.8 27.5 0 28.3 0 29.2s.8 1.7 1.7 1.7h25.6c1.9 0 3.4-1.5 3.4-3.4V2.8c0-.9-.8-1.7-1.7-1.7Z"/><path d="M25.1 11a1.7 1.7 0 0 0-2.4 0L17 16.6 11.4 11h-.1a1.7 1.7 0 0 0-2.3.1l-5.6 5.6v-1.5a1.7 1.7 0 1 0-3.4 0v5.5c0 .9.8 1.7 1.7 1.7h5.5a1.7 1.7 0 1 0 0-3.4H5.8L10.2 14.6l5.6 5.6c.7.7 1.7.7 2.4 0l6.8-6.8a1.7 1.7 0 0 0 .1-2.4Z"/></svg><h4>تكاليف إعلانية أقل</h4><p>خفّض الـ CPA والـ CPM وحسّن كفاءة إنفاقك</p></div>
       <div class="card benefit"><svg class="ico" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0a16 16 0 1 0 0 32 16 16 0 0 0 0-32Zm1.7 23.4v1.2a1.7 1.7 0 1 1-3.4 0v-1.2a4.3 4.3 0 0 1-3.6-3 1.7 1.7 0 0 1 3.2-1.1c.2.4.6.7 1.1.7H17a1.1 1.1 0 0 0 .2-2.3l-3.4-.7a4.3 4.3 0 0 1 .5-8.4V7.4a1.7 1.7 0 1 1 3.4 0v1.2c1.6.3 2.9 1.4 3.5 3a1.7 1.7 0 0 1-3.2 1.1 1.1 1.1 0 0 0-1.1-.7h-2.2a.9.9 0 0 0-.2 1.7l3.4.7a4.3 4.3 0 0 1-.2 8.9Z"/></svg><h4>شحن فوري للرصيد</h4><p>أضف الأموال في أي وقت وتجنّب انقطاع العرض</p></div>
       <div class="card benefit"><svg class="ico" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M8 1.7A7.7 7.7 0 0 0 .3 9.3v.9C.7 22.2 10.4 31.7 22.3 31.7h.4c4.2 0 7.6-3.4 7.6-7.7v-.4c0-1.2-.7-2.3-1.9-2.8l-4.1-1.6a3.4 3.4 0 0 0-3.9.8l-2 2c-.1.1-.2.1-.3.1A12.7 12.7 0 0 1 9.9 13.9c0-.1 0-.2.1-.3l2-2c.9-.9 1.2-2.4.8-3.9L11.2 3.6A3 3 0 0 0 8.4 1.7H8Z"/></svg><h4>دعم متخصص على مدار الساعة</h4><p>حلّ المشكلات بسرعة مع فريق دعم مخصص</p></div>
     </div>
@@ -312,11 +376,9 @@ section{padding:80px 0}
       <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>نتائج مُثبتة</span>
       <h2>الأرقام لا تكذب</h2>
     </div>
-    <!-- استبدل XX بأرقامك الحقيقية الموثّقة -->
     <div class="stats-row">
-      <div class="stat"><b>+XX</b><span>دولة</span></div>
-      <div class="stat"><b>+XX</b><span>تقييم إيجابي</span></div>
-      <div class="stat"><b>+XX</b><span>عميل</span></div>
+      <div class="stat"><b><bdi dir="ltr">100+</bdi></b><span>تقييم إيجابي</span></div>
+      <div class="stat"><b><bdi dir="ltr">350+</bdi></b><span>عميل</span></div>
     </div>
     <div class="badges">
       <div class="badge">ضع هنا شارة الأداء الخاصة بك</div>
@@ -331,13 +393,13 @@ section{padding:80px 0}
     <div class="offer-box">
       <div class="head">
         <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>العرض</span>
-        <h2>ماذا تحصل عليه عند استخدام حساباتنا الإعلانية الوكالية</h2>
+        <h2>ماذا تحصل عليه عند استخدام حسابات Agency الخاصة بنا</h2>
         <p>مصمّمة لتحقيق نتائج أفضل مع دعم موثوق من فريقنا.</p>
       </div>
       <div class="grid g3">
-        <div class="card"><span class="pill">عوائد أعلى</span><h4>حوافز استرداد مجزية</h4><p>احصل على عوائد أعلى كلما زاد إنفاقك الإعلاني الفصلي.</p></div>
-        <div class="card"><span class="pill">شهر مجاني</span><h4>الطيار الآلي</h4><p>أتمِت حملاتك بقواعد تحكّم ذكية ومراقبة للأداء في الوقت الفعلي.</p></div>
-        <div class="card"><span class="pill">٢٠ فيديو مجانًا</span><h4>دمج الإبداعات</h4><p>أنشئ إعلانات جديدة من أفضل مقاطعك أداءً لتفادي تشبّع الجمهور.</p></div>
+        <div class="card"><span class="pill">Cashback</span><h4>Cashback مجزٍ على الإنفاق</h4><p>تحصل على نسبة Cashback أعلى كلما زاد إنفاقك الإعلاني الفصلي.</p></div>
+        <div class="card"><span class="pill">شهر مجاني</span><h4>Auto Pilot</h4><p>أتمِت حملاتك بقواعد تحكّم ذكية ومراقبة للأداء في الوقت الفعلي.</p></div>
+        <div class="card"><span class="pill"><bdi dir="ltr">20</bdi> فيديو مجانًا</span><h4>Creative Fusion</h4><p>أنشئ إعلانات جديدة من أفضل مقاطعك أداءً لتفادي تشبّع الجمهور.</p></div>
       </div>
     </div>
   </div>
@@ -348,16 +410,16 @@ section{padding:80px 0}
   <div class="container">
     <div class="section-head">
       <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>المقارنة</span>
-      <h2>اكتشف لماذا ينتقل المعلنون إلى حسابات تيك توك الوكالية</h2>
+      <h2>اكتشف لماذا ينتقل المعلنون إلى حسابات TikTok Agency</h2>
     </div>
     <div class="compare">
       <div class="col cmp-labels"><ul class="cmp-list">
         <li>الإعداد والتحكم</li><li>الوصول إلى الأسواق</li><li>ميزات الإعلانات</li><li>حدود الإنفاق</li><li>خيارات الدفع</li><li>استقرار الحساب</li><li>إدارة الرصيد</li><li>مستوى الدعم</li>
       </ul></div>
-      <div class="col cmp-ours"><div class="cmp-head">حسابنا الإعلاني</div><ul class="cmp-list" data-icon="ok">
-        <li>بإرشاد ودعم من الخبراء</li><li>الوصول إلى أكثر من ٥٥ سوقًا</li><li>جميع صيغ الإعلانات متاحة</li><li>إمكانية توسّع غير محدودة</li><li>طرق دفع متعددة ومرنة</li><li>حسابات مستقرة وعالية الثقة</li><li>إعادة توزيع الرصيد عند حدوث مشكلة</li><li>دعم مباشر من فريقنا</li>
+      <div class="col cmp-ours"><div class="cmp-head">حساب Agency لدينا</div><ul class="cmp-list" data-icon="ok">
+        <li>بإرشاد ودعم من الخبراء</li><li>الوصول إلى أسواق عالمية متعددة</li><li>جميع صيغ الإعلانات متاحة</li><li>إمكانية توسّع غير محدودة</li><li>طرق دفع متعددة ومرنة</li><li>حسابات مستقرة وعالية الثقة</li><li>إعادة توزيع الرصيد عند حدوث مشكلة</li><li>دعم مباشر من فريقنا</li>
       </ul></div>
-      <div class="col cmp-self"><div class="cmp-head">حساب ذاتي الخدمة</div><ul class="cmp-list" data-icon="no">
+      <div class="col cmp-self"><div class="cmp-head">حساب Self-serve</div><ul class="cmp-list" data-icon="no">
         <li>يدوي من الألف إلى الياء</li><li>مقيّد بمنطقة الحساب</li><li>ميزات أساسية فقط</li><li>سقف ميزانية محدود</li><li>بطاقة ائتمان فقط</li><li>احتمال أعلى للإيقاف</li><li>رصيد غير قابل للسحب</li><li>لا يوجد دعم مخصص</li>
       </ul></div>
     </div>
@@ -370,11 +432,11 @@ section{padding:80px 0}
   <div class="container" style="max-width:1020px">
     <div class="section-head">
       <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>لمن هذه الخدمة؟</span>
-      <h2>فيمَ تستخدم حساب تيك توك الوكالي؟</h2>
+      <h2>فيمَ تستخدم حساب TikTok Agency؟</h2>
     </div>
     <div class="grid g2">
       <div class="fit"><h3>الأنسب لـ</h3><ul data-icon="yes">
-        <li>الوصول إلى عملاء دوليين</li><li>بيع منتجات أو خدمات نشاطك التجاري</li><li>الترويج لمواقعك وزيادة الزيارات إليها</li><li>إدارة متاجر الدروبشيبينغ أو الطباعة عند الطلب</li>
+        <li>الوصول إلى عملاء دوليين</li><li>بيع منتجات أو خدمات نشاطك التجاري</li><li>الترويج لمواقعك وزيادة الزيارات إليها</li><li>إدارة متاجر Dropshipping أو Print-on-Demand</li>
       </ul></div>
       <div class="fit"><h3>لا يُستخدم في</h3><ul data-icon="ban">
         <li>التفاعل الوهمي كالمشاهدات أو الإعجابات المزيفة</li><li>بيع المنتجات المحظورة كالأسلحة والحيوانات وغيرها</li><li>الإعلان عن محتوى يخالف سياسات الإعلانات</li><li>رفع التجميد أو الحظر عن حسابك</li>
@@ -389,18 +451,56 @@ section{padding:80px 0}
   <div class="container">
     <div class="section-head" style="max-width:732px;margin-bottom:0">
       <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>آلية العمل</span>
-      <h2>جهّز حسابك الإعلاني الوكالي على تيك توك في ٣ خطوات بسيطة</h2>
+      <h2>جهّز حساب TikTok Agency الخاص بك في <bdi dir="ltr">3</bdi> خطوات بسيطة</h2>
     </div>
     <div class="steps">
       <div class="step-tabs" role="tablist">
-        <button class="step-tab" role="tab" aria-selected="true" aria-controls="p1"><span><strong>الخطوة ١: أرسل بياناتك</strong><small>قدّم تفاصيل نشاطك التجاري لمراجعة امتثال سريعة</small></span><svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 18 6 6m0 0h8M6 6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="step-tab" role="tab" aria-selected="false" aria-controls="p2"><span><strong>الخطوة ٢: موّل حسابك</strong><small>أضف ميزانيتك الأولية وفعّل حسابك الإعلاني</small></span><svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 18 6 6m0 0h8M6 6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="step-tab" role="tab" aria-selected="false" aria-controls="p3"><span><strong>الخطوة ٣: أطلق حملتك</strong><small>ابدأ تشغيل إعلاناتك بدعم من فريقنا</small></span><svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 18 6 6m0 0h8M6 6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="step-tab" role="tab" aria-selected="true" aria-controls="p1"><span><strong>الخطوة 1: أرسل بياناتك</strong><small>قدّم تفاصيل نشاطك التجاري لمراجعة امتثال سريعة</small></span><svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 18 6 6m0 0h8M6 6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="step-tab" role="tab" aria-selected="false" aria-controls="p2"><span><strong>الخطوة 2: موّل حسابك</strong><small>أضف ميزانيتك الأولية وفعّل حسابك الإعلاني</small></span><svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 18 6 6m0 0h8M6 6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="step-tab" role="tab" aria-selected="false" aria-controls="p3"><span><strong>الخطوة 3: أطلق حملتك</strong><small>ابدأ تشغيل إعلاناتك بدعم من فريقنا</small></span><svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 18 6 6m0 0h8M6 6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
-      <div class="step-panels" style="flex:1">
-        <div class="step-panel" id="p1"><svg viewBox="0 0 627 456"><rect width="627" height="456" fill="#211e1e"/><rect x="163" y="60" width="300" height="336" rx="18" fill="#0f0d0d" stroke="#312b2b"/><g fill="#312b2b"><rect x="193" y="100" width="120" height="12" rx="6"/><rect x="193" y="130" width="240" height="40" rx="8"/><rect x="193" y="190" width="240" height="40" rx="8"/><rect x="193" y="250" width="240" height="40" rx="8"/></g><rect x="193" y="320" width="240" height="44" rx="22" fill="#de1f26"/></svg></div>
-        <div class="step-panel" id="p2" hidden><svg viewBox="0 0 627 456"><rect width="627" height="456" fill="#211e1e"/><rect x="143" y="110" width="340" height="210" rx="20" fill="#de1f26"/><rect x="143" y="150" width="340" height="36" fill="#811b1f"/><rect x="173" y="230" width="140" height="14" rx="7" fill="#ffe1e2" opacity=".7"/><rect x="173" y="260" width="80" height="14" rx="7" fill="#ffe1e2" opacity=".5"/><circle cx="440" cy="270" r="22" fill="#ffe1e2" opacity=".6"/></svg></div>
-        <div class="step-panel" id="p3" hidden><svg viewBox="0 0 627 456"><rect width="627" height="456" fill="#211e1e"/><path d="M90 360 200 280l90 40 120-120 130-80" fill="none" stroke="#04da8d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="540" cy="120" r="14" fill="#04da8d"/><g fill="#312b2b"><rect x="90" y="70" width="160" height="16" rx="8"/><rect x="90" y="100" width="100" height="16" rx="8"/></g></svg></div>
+      <div class="step-panels">
+        <div class="step-panel" id="p1" role="tabpanel"><div class="mock"><div class="m-bar"><i></i><i></i><i></i><div class="m-url">ads-manager / agency / your-account</div></div><div class="m-top"><div class="m-brand"><b></b>Ads Manager</div><div class="m-tabs"><span class=on>Dashboard</span><span>Campaign</span><span>Tools</span><span>Analytics</span></div><div class="m-av"></div></div><div class="m-body"><div class="m-side"><span>Dashboard</span><span>Campaign</span><span>Assets</span><span>Finance</span><span class=on>Account</span></div><div class="m-main">
+<div class="m-h">Apply for an Agency ad account</div>
+<div class="m-steps"><span class="done">1 · Business info</span><span>2 · Billing</span><span>3 · Review</span></div>
+<div class="m-card"><div class="m-grid">
+<div class="m-f"><label>Business name</label><div class="m-in">Your Store LLC</div></div>
+<div class="m-f"><label>Website URL</label><div class="m-in foc">https://yourstore.com</div></div>
+<div class="m-f"><label>Industry</label><div class="m-in">E-commerce <span>▾</span></div></div>
+<div class="m-f"><label>Monthly ad spend</label><div class="m-in">$5,000 – $20,000 <span>▾</span></div></div>
+<div class="m-f" style="grid-column:1/-1"><label>Target markets</label><div class="m-in"><div class="m-chips"><em>United States ×</em><em>Saudi Arabia ×</em><em>UAE ×</em><em>United Kingdom ×</em></div></div></div>
+</div><div class="m-chk"><b>✓</b>I confirm my products comply with the advertising policies</div>
+<div class="m-row"><span class="m-btn gh">Save draft</span><span class="m-btn">Submit for review</span></div></div>
+<div class="m-toast"><span class="m-dot"></span>Compliance review · In progress</div>
+</div></div></div></div>
+        <div class="step-panel" id="p2" role="tabpanel" hidden><div class="mock"><div class="m-bar"><i></i><i></i><i></i><div class="m-url">ads-manager / agency / your-account</div></div><div class="m-top"><div class="m-brand"><b></b>Ads Manager</div><div class="m-tabs"><span class=on>Dashboard</span><span>Campaign</span><span>Tools</span><span>Analytics</span></div><div class="m-av"></div></div><div class="m-body"><div class="m-side"><span>Dashboard</span><span>Campaign</span><span>Assets</span><span class=on>Finance</span><span>Account</span></div><div class="m-main">
+<div class="m-h">Payment · Add balance</div>
+<div class="m-bal"><div class="m-card"><div class="m-k">Account balance</div><div class="m-v">$5,000.00 <small>+$5,000</small></div></div>
+<div class="m-card"><div class="m-k">Cashback this quarter</div><div class="m-v">$150.00</div></div></div>
+<div class="m-card"><div class="m-f"><label>Top-up amount (USD)</label><div class="m-in foc">5,000</div></div>
+<div class="m-f" style="margin-top:10px"><label>Payment method</label></div>
+<div class="m-pay"><span>Bank transfer</span><span class="on">Payoneer</span><span>USDT</span><span>Card</span></div>
+<div class="m-sum"><span>Top-up</span><span>$5,000.00</span></div><div class="m-sum"><span>Service fee</span><span>Agency rate</span></div>
+<div class="m-sum t"><span>Ad balance after top-up</span><span>$5,000.00</span></div>
+<div class="m-row"><span class="m-btn">Confirm top-up</span></div></div>
+<div class="m-toast"><span class="m-dot ok"></span>Ad account active · Ready to launch</div>
+</div></div></div></div>
+        <div class="step-panel" id="p3" role="tabpanel" hidden><div class="mock"><div class="m-bar"><i></i><i></i><i></i><div class="m-url">ads-manager / agency / your-account</div></div><div class="m-top"><div class="m-brand"><b></b>Ads Manager</div><div class="m-tabs"><span>Dashboard</span><span class=on>Campaign</span><span>Tools</span><span>Analytics</span></div><div class="m-av"></div></div><div class="m-body"><div class="m-side"><span>Dashboard</span><span class=on>Campaign</span><span>Assets</span><span>Finance</span><span>Account</span></div><div class="m-main"><div class="m-split"><div>
+<div class="m-h">Create campaign</div>
+<div class="m-k" style="margin-bottom:6px">Advertising objective</div>
+<div class="m-obj"><span>Reach</span><span>Traffic</span><span class="on">Website conversions</span><span>Product sales</span></div>
+<div class="m-card" style="margin-bottom:10px"><div class="m-grid">
+<div class="m-f"><label>Daily budget</label><div class="m-in">$300.00</div></div>
+<div class="m-f"><label>Optimization</label><div class="m-in">Purchase <span>▾</span></div></div></div></div>
+<div class="m-k" style="margin-bottom:6px">Example results</div>
+<div class="m-kpi"><div class="m-card"><div class="m-k">CPM</div><div class="m-v">$3.20</div></div><div class="m-card"><div class="m-k">CPA</div><div class="m-v">$8.40</div></div><div class="m-card"><div class="m-k">ROAS</div><div class="m-v">3.6x</div></div></div>
+<div class="m-row"><span class="m-btn">Publish</span></div>
+</div>
+<div class="phone"><div class="screen"><div class="feed">Following &nbsp; <u>For You</u></div><div class="prod"></div>
+<div class="rail"><i class="av"></i><i class="hr"></i>12.4K<i></i>318<i></i>Share</div>
+<div class="cap"><b>@yourbrand</b>New drop is here — limited stock! <em>Sponsored</em></div>
+<div class="cta-bar">Shop now ›</div></div></div>
+</div></div></div></div></div>
       </div>
     </div>
   </div>
@@ -413,9 +513,9 @@ section{padding:80px 0}
       <div class="why-copy">
         <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>لماذا تختارنا</span>
         <h2>اخترنا إن كنت تريد حسابات تواصل العمل بثبات مع توسّعك…</h2>
-        <div class="why-item" data-check><div><h3>شراكة تسويقية مع تيك توك</h3><p>احصل على حسابات إعلانية بمستوى الوكالات مع مزايا حصرية من المنصة.</p></div></div>
+        <div class="why-item" data-check><div><h3>شراكة تسويقية مع TikTok</h3><p>احصل على حسابات بمستوى Agency مع مزايا حصرية من المنصة.</p></div></div>
         <div class="why-item" data-check><div><h3>دعم مخصص للحساب</h3><p>نرشدك خلال الإعداد ونضمن تشغيلًا مستقرًا ومتوافقًا مع السياسات.</p></div></div>
-        <div class="why-item" data-check><div><h3>تواصل مباشر مع تيك توك</h3><p>دعم ذو أولوية وحلّ أسرع للمشكلات عبر قناة تواصل مباشرة.</p></div></div>
+        <div class="why-item" data-check><div><h3>تواصل مباشر مع TikTok</h3><p>دعم ذو أولوية وحلّ أسرع للمشكلات عبر قناة تواصل مباشرة.</p></div></div>
       </div>
       <div class="why-art" aria-hidden="true"><svg viewBox="0 0 560 520"><circle cx="280" cy="260" r="230" fill="#e4e1e1"/><rect x="170" y="90" width="220" height="340" rx="28" fill="#312b2b"/><rect x="190" y="120" width="180" height="120" rx="14" fill="#de1f26"/><path d="M262 150v60l50-30z" fill="#fff"/><g fill="#5d5858"><rect x="190" y="262" width="140" height="12" rx="6"/><rect x="190" y="288" width="100" height="12" rx="6"/></g><rect x="190" y="330" width="180" height="70" rx="12" fill="#211e1e"/><path d="M206 382l30-20 26 10 34-26 40 16" fill="none" stroke="#04da8d" stroke-width="4"/><circle cx="420" cy="130" r="40" fill="#9c181d"/><path d="m402 130 12 12 24-24" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </div>
@@ -427,7 +527,7 @@ section{padding:80px 0}
   <div class="container">
     <div class="section-head">
       <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>آراء العملاء</span>
-      <h2>موثوقون من قِبل معلنين يديرون حسابات تيك توك الوكالية</h2>
+      <h2>موثوقون من قِبل أكثر من <bdi dir="ltr">350</bdi> معلنًا يديرون حسابات TikTok Agency</h2>
     </div>
     <!-- استبدل البطاقات التالية بتقييمات حقيقية من عملائك (مع موافقتهم) -->
     <div class="grid g3 testi-grid" id="testiGrid"></div>
@@ -442,16 +542,16 @@ section{padding:80px 0}
       <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>الأسئلة الشائعة</span>
       <h2>لديك أسئلة؟ لدينا الإجابات</h2>
     </div>
-    <details open><summary>ما هو الحساب الإعلاني الوكالي على تيك توك؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-      <div class="ans">هو نوع خاص من الحسابات الإعلانية يُمنح لشركاء تيك توك المعتمدين، ويوفّر مرونة أكبر، ووصولًا إلى أسواق مقيّدة، واستقرارًا أعلى، ودعمًا مخصصًا، مما يتيح للمعلنين تشغيل حملات في مناطق متعددة بقيود أقل مقارنةً بالحسابات الشخصية أو التجارية العادية.</div></details>
-    <details><summary>كم تبلغ تكلفة الحساب الإعلاني الوكالي؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <details open><summary>ما هو حساب TikTok Agency الإعلاني؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div class="ans">هو نوع خاص من الحسابات الإعلانية يُمنح لشركاء TikTok المعتمدين، ويوفّر مرونة أكبر، ووصولًا إلى أسواق مقيّدة، واستقرارًا أعلى، ودعمًا مخصصًا، مما يتيح للمعلنين تشغيل حملات في مناطق متعددة بقيود أقل مقارنةً بالحسابات الشخصية أو التجارية العادية.</div></details>
+    <details><summary>كم تبلغ تكلفة حساب TikTok Agency؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
       <div class="ans">تعتمد التكلفة على رسوم الخدمة والضرائب، إذ لا يُباع هذا الحساب بل يُؤجَّر مقابل نسبة من الإنفاق الإعلاني. وكلما ارتفع إنفاقك انخفضت نسبة الرسوم. <!-- حدّد نسبتك هنا --></div></details>
     <details><summary>ما خيارات الدفع المتاحة؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-      <div class="ans">نوفّر عدة طرق دفع مرنة. نقبل المدفوعات فقط عبر نظام الفوترة الرسمي على موقعنا، لذا احذر من أي جهة تطلب منك التحويل إلى حسابات شخصية.</div></details>
+      <div class="ans">نوفّر عدة طرق دفع مرنة مثل التحويل البنكي وPayoneer وUSDT. نقبل المدفوعات فقط عبر نظام الفوترة الرسمي على موقعنا، لذا احذر من أي جهة تطلب منك التحويل إلى حسابات شخصية.</div></details>
     <details><summary>ماذا يحدث إذا تم إيقاف حسابي؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-      <div class="ans">نتواصل فورًا مع تيك توك لتقديم طلب استئناف، وعادةً ما يعود الحساب للعمل خلال أيام قليلة.</div></details>
-    <details><summary>هل يمكن للحساب الوكالي استهداف كل الأسواق؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-      <div class="ans">إلى حد كبير نعم؛ يمكنه استهداف أكثر من ٥٥ دولة. راجع قائمة المواقع المتاحة في مواضع إعلانات تيك توك للاطلاع على التفاصيل الكاملة.</div></details>
+      <div class="ans">نتواصل فورًا مع TikTok لتقديم طلب استئناف، وعادةً ما يعود الحساب للعمل خلال أيام قليلة.</div></details>
+    <details><summary>هل يمكن لحساب Agency استهداف كل الأسواق؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div class="ans">إلى حد كبير نعم؛ يمكنه استهداف معظم الأسواق التي تدعمها إعلانات TikTok. تواصل معنا لمعرفة إن كان سوقك المستهدف متاحًا.</div></details>
   </div>
 </section>
 
@@ -459,8 +559,8 @@ section{padding:80px 0}
 <section class="cta" id="contact">
   <div class="container">
     <div class="cta-copy">
-      <h2>أطلق إعلاناتك على تيك توك خلال دقائق</h2>
-      <p>جهّز حسابك الإعلاني الوكالي وابدأ حملاتك بدعم كامل.</p>
+      <h2>أطلق إعلاناتك على TikTok خلال دقائق</h2>
+      <p>جهّز حساب Agency الخاص بك وابدأ حملاتك بدعم كامل.</p>
       <a href="mailto:hello@example.com" class="btn btn--light">ابدأ الآن</a>
     </div>
     <div class="cta-art" aria-hidden="true"><svg viewBox="0 0 347 280"><rect x="110" y="20" width="130" height="240" rx="22" fill="#fff" opacity=".95"/><rect x="124" y="44" width="102" height="130" rx="12" fill="#c82a2f"/><path d="M164 92v36l30-18z" fill="#fff"/><g fill="#e4e1e1"><rect x="124" y="190" width="80" height="10" rx="5"/><rect x="124" y="210" width="54" height="10" rx="5"/></g><circle cx="280" cy="70" r="34" fill="#fff" opacity=".25"/><circle cx="60" cy="200" r="24" fill="#fff" opacity=".2"/></svg></div>
@@ -473,7 +573,7 @@ section{padding:80px 0}
     <div class="f-row"><h6>تواصل معنا</h6><div class="f-body"><hr>
       <div class="f-links"><a href="tel:+000000000">الهاتف: ‎+000 000 0000</a><a href="mailto:hello@example.com">hello@example.com</a><span>العنوان: أضف عنوان شركتك هنا</span></div></div></div>
     <div class="f-row"><h6>التواصل الاجتماعي</h6><div class="f-body"><hr>
-      <div class="f-social"><a href="#">فيسبوك</a><a href="#">لينكدإن</a><a href="#">يوتيوب</a><a href="#">تيك توك</a><a href="#">X</a></div></div></div>
+      <div class="f-social"><a href="#">فيسبوك</a><a href="#">لينكدإن</a><a href="#">يوتيوب</a><a href="#">TikTok</a><a href="#">X</a></div></div></div>
     <div class="f-row"><h6>الشركة</h6><div class="f-body"><hr>
       <div class="f-links"><a href="#">من نحن</a><a href="#">برنامج الإحالة</a><a href="#">المدونة</a><a href="#">أعمالنا</a><a href="#">شروط الخدمة</a><a href="#">سياسة الاسترداد</a><a href="#">سياسة الخصوصية</a><a href="#">شركاؤنا</a><a href="#">تذكرة دعم</a></div></div></div>
   </div>
@@ -508,6 +608,8 @@ document.querySelectorAll('.faq details').forEach(d=>d.addEventListener('toggle'
 const nav=document.getElementById('nav'),mt=document.getElementById('menuToggle');
 mt.addEventListener('click',()=>{const o=nav.classList.toggle('open');mt.setAttribute('aria-expanded',o);});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const fit=()=>document.querySelectorAll('.step-panel:not([hidden]) .mock').forEach(m=>{m.style.transform='scale('+m.parentElement.clientWidth/640+')'});
+addEventListener('resize',fit);tabs.forEach(t=>t.addEventListener('click',fit));fit();
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
 </body>
