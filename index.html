@@ -115,7 +115,17 @@ section{padding:80px 0}
 .hero h1{font-size:40px;line-height:1.45}
 .hero h1 span{display:block;color:var(--accent)}
 .hero-sub{font-size:18px;color:var(--text-2);margin-bottom:28px}
-.hero-art{flex:0 1 540px;width:100%}
+.hero-art{flex:0 1 560px;width:100%}
+.hero-vsl .vsl-frame{margin:0}
+@media (max-width:1024px){
+  .hero .container{gap:14px!important;align-items:stretch}
+  .hero{padding:28px 0 40px}
+  .hero-copy{display:contents}
+  .hero-copy>*{order:2}.hero-copy>.chip{order:0}.hero-copy>h1{order:1}
+  .hero-vsl{order:1;margin:8px 0 12px;max-width:none;flex:none}
+  .hero-sub{margin-bottom:8px}
+  .hero-price{border-radius:16px}
+}
 @media (max-width:1024px){.hero .container{flex-direction:column;gap:40px}.hero-copy{max-width:none}.hero h1{font-size:28px}.hero-art{width:100%;max-width:520px}}
 
 /* Grids & cards */
@@ -366,23 +376,6 @@ section{padding:80px 0}
 </header>
 
 <main>
-<!-- VSL: ضع رابط الفيديو في المتغير VSL_URL أسفل الصفحة (YouTube أو Vimeo أو ملف MP4) -->
-<section class="vsl" id="vsl">
-  <div class="container">
-    <span class="vsl-tag"><i></i>شاهد الفيديو قبل ما تطلب</span>
-    <h2>كيفاش تخدم إعلانات TikTok بحساب Agency، تخدم ومن بعد تخلّص</h2>
-    <div class="vsl-frame" id="vslFrame">
-      <button class="vsl-poster" id="vslPoster" aria-label="تشغيل الفيديو">
-        <span class="vsl-sound">🔊 شغّل الصوت</span>
-        <span class="vsl-play"><svg width="34" height="34" viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l10.5-6.5z"/></svg></span>
-        <b style="font-size:18px">اضغط لمشاهدة الفيديو</b>
-        <small id="vslHint">ضع فيديو VSL هنا</small>
-      </button>
-    </div>
-    <a href="#offer" class="btn">خذ عرضك في نفس اليوم
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12m0 0-4.5-4.5M15 9l-4.5 4.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-  </div>
-</section>
 <!-- Hero -->
 <section class="hero">
   <div class="container">
@@ -397,23 +390,17 @@ section{padding:80px 0}
       <div><a href="#offer" class="btn">احصل على حسابك
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12m0 0-4.5-4.5M15 9l-4.5 4.5" stroke="#ffe1e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div>
-    <div class="hero-art art" aria-hidden="true" style="aspect-ratio:560/470"><div class="mock" style="width:560px;height:470px">
-<div class="win" style="left:0;top:40px;width:410px">
-<div class="m-bar"><i></i><i></i><i></i><div class="m-url">ads-manager / agency / dashboard</div></div>
-<div class="m-top"><div class="m-brand"><b></b>Ads Manager</div><span class="badge-s grn">● Agency account</span></div>
-<div style="padding:12px 14px 14px;background:#f5f6f8">
-<div class="kpis"><div class="m-card"><div class="m-k">Spend</div><div class="m-v">$12.4K</div><span class="up">▲ 38%</span></div><div class="m-card"><div class="m-k">CPM</div><div class="m-v">$3.10</div><span class="up">▼ 22%</span></div><div class="m-card"><div class="m-k">CPA</div><div class="m-v">$7.90</div><span class="up">▼ 31%</span></div><div class="m-card"><div class="m-k">ROAS</div><div class="m-v">3.8x</div><span class="up">▲ 0.9</span></div></div>
-<div class="m-card" style="padding:10px 12px"><div style="display:flex;justify-content:space-between;margin-bottom:6px"><b style="font-size:11.5px">Performance · last 30 days</b><span class="meta"><span style="color:#fe2c55">━</span> Conversions &nbsp;<span style="color:#25c7c2">┅</span> CPA</span></div><svg viewBox="0 0 330 110" style="width:100%;height:110px;display:block"><defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fe2c55" stop-opacity=".28"/><stop offset="1" stop-color="#fe2c55" stop-opacity="0"/></linearGradient></defs>
-<g stroke="#eeeff1"><line x1="0" y1="20" x2="330" y2="20"/><line x1="0" y1="55" x2="330" y2="55"/><line x1="0" y1="90" x2="330" y2="90"/></g>
-<path d="M0 92 C30 88 45 80 70 78 S120 70 145 60 190 52 215 40 270 30 330 12 V110 H0Z" fill="url(#hg)"/>
-<path d="M0 92 C30 88 45 80 70 78 S120 70 145 60 190 52 215 40 270 30 330 12" fill="none" stroke="#fe2c55" stroke-width="2.5"/>
-<path d="M0 70 C40 72 70 74 110 78 S180 82 220 84 280 86 330 88" fill="none" stroke="#25c7c2" stroke-width="2" stroke-dasharray="4 4"/></svg></div>
-</div></div>
-<div style="position:absolute;right:0;top:20px"><div class="phone" style="width:170px;height:350px;flex:none"><div class="screen" style="background:linear-gradient(160deg,#3b1d5a 0,#a8245a 45%,#f2994a 100%)"><div class="feed">Following &nbsp; <u>For You</u></div><div class="prod" style="left:37px;top:94px"></div><div class="rail"><i class="av"></i><i class="hr"></i>12.4K<i></i>318<i></i>Share</div><div class="cap"><b>@yourbrand</b>New drop is here — limited stock! <em>Sponsored</em></div><div class="cta-bar">Shop now ›</div></div></div></div>
-<div class="chipx" style="left:250px;top:0"><span class="ic g">✓</span><span>Ad approved<small>Review completed</small></span></div>
-<div class="chipx" style="left:-6px;top:390px"><span class="ic r">$</span><span>Cashback returned<small>Month 2 · up to $6,000</small></span></div>
-<div class="chipx" style="left:200px;top:410px"><span class="ic d">💳</span><span>Spend first, pay later<small>All cards supported</small></span></div>
-</div></div>
+    <!-- VSL: ضع رابط الفيديو في المتغير VSL_URL أسفل الصفحة (YouTube أو Vimeo أو ملف MP4) -->
+    <div class="hero-art hero-vsl">
+    <div class="vsl-frame" id="vslFrame">
+      <button class="vsl-poster" id="vslPoster" aria-label="تشغيل الفيديو">
+        <span class="vsl-sound">🔊 شغّل الصوت</span>
+        <span class="vsl-play"><svg width="34" height="34" viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l10.5-6.5z"/></svg></span>
+        <b style="font-size:18px">اضغط لمشاهدة الفيديو</b>
+        <small id="vslHint">ضع فيديو VSL هنا</small>
+      </button>
+    </div>
+    </div>
   </div>
 </section>
 
