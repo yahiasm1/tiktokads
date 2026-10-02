@@ -292,18 +292,22 @@ section{padding:80px 0}
 
 /* Testimonials */
 .testi{background:var(--bg)}
-.testi-grid{position:relative;align-items:start;margin-bottom:12px}
-.testi-col{display:flex;flex-direction:column;gap:20px}
-.t-card{display:flex;flex-wrap:wrap;gap:24px}
-.avatar{width:60px;height:60px;border-radius:50%;background:var(--card-2);border:1px solid var(--line-3);display:grid;place-items:center;color:var(--muted-2);font-weight:700}
-.t-meta{display:flex;flex-direction:column;gap:12px}
-.t-meta h4{font-size:18px;font-weight:500;color:var(--text-2);margin:0}
-.t-card p{width:100%;color:var(--muted)}
+.testi-grid{columns:3 300px;column-gap:20px}
+.t-card{break-inside:avoid;margin:0 0 20px;display:flex;flex-direction:column;gap:14px}
+.t-head{display:flex;align-items:center;gap:12px}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--bg-2);border:1px solid var(--line);display:grid;place-items:center}
+.avatar svg{width:22px;height:22px}
+.t-meta h4{font-size:16px;font-weight:600;margin:0}
+.t-src{font-size:13px;color:var(--muted-2)}
+.t-card blockquote{margin:0;font-size:18px;line-height:1.8;color:var(--ink);font-weight:500}
 .stars{display:flex;gap:4px}
-.stars i{width:24px;height:23px;border-radius:4px;background:var(--card-2);display:grid;place-items:center}
-.stars i::before{content:"★";color:#04da8d;font-style:normal;font-size:16px;line-height:1}
-.fade{position:absolute;bottom:0;inset-inline:0;height:260px;background:linear-gradient(180deg,rgba(255,255,255,0) 0,var(--bg) 100%);pointer-events:none}
-@media (max-width:1024px){.testi-col:nth-child(n+2) .t-card:nth-child(n+2){display:none}}
+.stars i{width:22px;height:22px;border-radius:4px;background:#00b67a;display:grid;place-items:center}
+.stars i::before{content:"★";color:#fff;font-style:normal;font-size:14px;line-height:1}
+.t-shot{all:unset;cursor:pointer;align-self:flex-start;font-size:13px;font-weight:600;color:var(--accent);border-bottom:1px dashed currentColor}
+.shot-modal{border:0;border-radius:16px;padding:0;max-width:min(92vw,720px);background:#fff;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.shot-modal::backdrop{background:rgba(22,24,35,.6)}
+.shot-modal img{display:block;width:100%;height:auto}
+.shot-close{position:absolute;top:8px;inset-inline-end:8px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(22,24,35,.75);color:#fff;cursor:pointer}
 
 /* FAQ */
 .faq{max-width:780px}
@@ -644,9 +648,34 @@ section{padding:80px 0}
       <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#fe2c55"/></svg>آراء العملاء</span>
       <h2>موثوقون من قِبل أكثر من <bdi dir="ltr">350</bdi> معلنًا يديرون حسابات TikTok Agency</h2>
     </div>
-    <!-- استبدل البطاقات التالية بتقييمات حقيقية من عملائك (مع موافقتهم) -->
-    <div class="grid g3 testi-grid" id="testiGrid"></div>
-    <div class="center" style="margin-top:12px"><a href="#" class="btn btn--light">عرض جميع التقييمات</a></div>
+    <div class="testi-grid">
+      <figure class="card t-card">
+        <div class="t-head"><div class="avatar" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1877f2"/><path d="M13.4 19v-6h2l.3-2.4h-2.3V9.2c0-.7.2-1.2 1.2-1.2h1.2V5.9a16 16 0 0 0-1.8-.1c-1.8 0-3 1.1-3 3.1v1.7h-2V13h2v6z" fill="#fff"/></svg></div><div class="t-meta"><h4>عميل موثّق</h4><span class="t-src">Facebook · منذ 5 أسابيع</span></div></div>
+        <blockquote>«خاوتي نتعامل معاه مدة عامين و الله غير شهادة لله انسان صادق و ثقة و ليكونت تاعو خدامين مشاء الله»</blockquote>
+        <button class="t-shot" data-img="assets/reviews/1.jpg">📷 شاهد التعليق الأصلي</button>
+      </figure>
+      <figure class="card t-card">
+        <div class="t-head"><div class="avatar" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1877f2"/><path d="M13.4 19v-6h2l.3-2.4h-2.3V9.2c0-.7.2-1.2 1.2-1.2h1.2V5.9a16 16 0 0 0-1.8-.1c-1.8 0-3 1.1-3 3.1v1.7h-2V13h2v6z" fill="#fff"/></svg></div><div class="t-meta"><h4>عميل موثّق</h4><span class="t-src">Facebook · منذ 14 أسبوعًا</span></div></div>
+        <blockquote>«خوتي ننصحكم باه تتعاملو معاه قمة في المعاملة والاحترافية وحتا فالمصداقية»</blockquote>
+        <button class="t-shot" data-img="assets/reviews/2.jpg">📷 شاهد التعليق الأصلي</button>
+      </figure>
+      <figure class="card t-card">
+        <div class="t-head"><div class="avatar" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1877f2"/><path d="M13.4 19v-6h2l.3-2.4h-2.3V9.2c0-.7.2-1.2 1.2-1.2h1.2V5.9a16 16 0 0 0-1.8-.1c-1.8 0-3 1.1-3 3.1v1.7h-2V13h2v6z" fill="#fff"/></svg></div><div class="t-meta"><h4>عميل موثّق</h4><span class="t-src">Facebook · Super fan · منذ 20 أسبوعًا</span></div></div>
+        <blockquote>«احسن معاملة ونفتخر بما تقدمونه مزيد من النجاح 🤲»</blockquote>
+        <button class="t-shot" data-img="assets/reviews/3.jpg">📷 شاهد التعليق الأصلي</button>
+      </figure>
+      <figure class="card t-card">
+        <div class="t-head"><div class="avatar" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="5" fill="#ff0000"/><path d="M10 9v6l5-3z" fill="#fff"/></svg></div><div class="t-meta"><h4>عميل موثّق</h4><span class="t-src">YouTube · منذ 14 أسبوعًا</span></div></div>
+        <blockquote>«معاملة حسنة وانسان ثقة مشاء الله 🩵»</blockquote>
+        <button class="t-shot" data-img="assets/reviews/4.png">📷 شاهد التعليق الأصلي</button>
+      </figure>
+      <figure class="card t-card">
+        <div class="t-head"><div class="avatar" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="5" fill="#ff0000"/><path d="M10 9v6l5-3z" fill="#fff"/></svg></div><div class="t-meta"><h4>عميل موثّق</h4><span class="t-src">YouTube · منذ 13 أسبوعًا</span></div></div>
+        <blockquote>«عندو دي كونت بزاف قاويين اشرو عليه و ما تندموش»</blockquote>
+        <button class="t-shot" data-img="assets/reviews/5.png">📷 شاهد التعليق الأصلي</button>
+      </figure>
+    </div>
+    <dialog class="shot-modal" id="shotModal"><button class="shot-close" aria-label="إغلاق">✕</button><img alt="لقطة شاشة للتعليق الأصلي" id="shotImg"></dialog>
   </div>
 </section>
 
@@ -706,9 +735,9 @@ document.querySelectorAll('[data-icon]').forEach(ul=>ul.querySelectorAll('li').f
 document.querySelectorAll('[data-check]').forEach(el=>el.insertAdjacentHTML('afterbegin',ICONS.check));
 
 // testimonials – placeholders to replace with real, consented reviews
-const reviews=[[1,1,1],[1],[1,1]];
-const card=()=>`<div class="card t-card"><div class="avatar">ع</div><div class="t-meta"><h4>اسم العميل</h4><div class="stars"><i></i><i></i><i></i><i></i><i></i></div></div><p>ضع هنا تقييمًا حقيقيًا من أحد عملائك يصف تجربته مع الحسابات الإعلانية وفريق الدعم.</p></div>`;
-document.getElementById('testiGrid').innerHTML=reviews.map(c=>`<div class="testi-col">${c.map(card).join('')}</div>`).join('')+'<div class="fade"></div>';
+const modal=document.getElementById('shotModal'),shot=document.getElementById('shotImg');
+document.querySelectorAll('.t-shot').forEach(b=>b.addEventListener('click',()=>{shot.src=b.dataset.img;modal.showModal();}));
+modal.addEventListener('click',e=>{if(e.target===modal||e.target.classList.contains('shot-close'))modal.close();});
 
 // steps tabs
 const tabs=[...document.querySelectorAll('.step-tab')];
