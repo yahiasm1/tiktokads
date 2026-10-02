@@ -743,7 +743,7 @@ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classLis
 const fit=()=>document.querySelectorAll('.mock').forEach(m=>{const w=m.parentElement.clientWidth;if(w)m.style.transform='scale('+w/m.offsetWidth+')'});
 addEventListener('resize',fit);tabs.forEach(t=>t.addEventListener('click',fit));fit();
 // ===== VSL =====
-const VSL_URL=''; // مثال: https://www.youtube.com/watch?v=XXXX  أو  https://vimeo.com/123  أو  video.mp4
+const VSL_URL='assets/vsl.mp4'; // مثال: https://www.youtube.com/watch?v=XXXX  أو  https://vimeo.com/123  أو  video.mp4
 (()=>{const f=document.getElementById('vslFrame'),btn=document.getElementById('vslPoster');
  if(VSL_URL)document.getElementById('vslHint').textContent='';
  btn.addEventListener('click',()=>{if(!VSL_URL)return;let html;
