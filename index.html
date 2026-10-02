@@ -7,6 +7,8 @@
 <meta name="description" content="حساب TikTok Agency للتجار في الجزائر بـ 5500 دج: نفس نظام فايسبوك، يدعم جميع البطاقات، صالح مدى الحياة، بدون عمولة، مع Cashback وبونيس مجاني.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/fqndk3ckkp.js" async type="module"></script>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -82,6 +84,8 @@ section{padding:80px 0}
 .vsl h2{font-size:30px;max-width:760px}
 @media (max-width:767px){.vsl h2{font-size:22px}}
 .vsl-frame{position:relative;width:100%;max-width:880px;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#0d0e14;box-shadow:0 30px 70px rgba(22,24,35,.22),0 0 0 6px #fff,0 0 0 7px var(--line);margin:10px 0 6px}
+.vsl-frame wistia-player{position:absolute;inset:0;width:100%;height:100%;display:block}
+wistia-player[media-id='fqndk3ckkp']:not(:defined){background:center / contain no-repeat url('https://fast.wistia.com/embed/medias/fqndk3ckkp/swatch');filter:blur(5px)}
 .vsl-frame iframe,.vsl-frame video{position:absolute;inset:0;width:100%;height:100%;border:0}
 .vsl-poster{all:unset;cursor:pointer;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:#fff;background:radial-gradient(circle at 30% 20%,rgba(37,244,238,.25),transparent 55%),radial-gradient(circle at 75% 85%,rgba(254,44,85,.4),transparent 55%),#161823}
 .vsl-play{width:84px;height:84px;border-radius:50%;background:var(--accent);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(254,44,85,.25);transition:transform .2s}
@@ -390,15 +394,10 @@ section{padding:80px 0}
       <div><a href="#offer" class="btn">احصل على حسابك
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12m0 0-4.5-4.5M15 9l-4.5 4.5" stroke="#ffe1e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div>
-    <!-- VSL: ضع رابط الفيديو في المتغير VSL_URL أسفل الصفحة (YouTube أو Vimeo أو ملف MP4) -->
+    <!-- VSL (Wistia) -->
     <div class="hero-art hero-vsl">
-    <div class="vsl-frame" id="vslFrame">
-      <button class="vsl-poster" id="vslPoster" aria-label="تشغيل الفيديو">
-        <span class="vsl-sound">🔊 شغّل الصوت</span>
-        <span class="vsl-play"><svg width="34" height="34" viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l10.5-6.5z"/></svg></span>
-        <b style="font-size:18px">اضغط لمشاهدة الفيديو</b>
-        <small id="vslHint">ضع فيديو VSL هنا</small>
-      </button>
+    <div class="vsl-frame">
+      <wistia-player media-id="fqndk3ckkp" aspect="1.7777777777777777"></wistia-player>
     </div>
     </div>
   </div>
@@ -742,16 +741,6 @@ mt.addEventListener('click',()=>{const o=nav.classList.toggle('open');mt.setAttr
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 const fit=()=>document.querySelectorAll('.mock').forEach(m=>{const w=m.parentElement.clientWidth;if(w)m.style.transform='scale('+w/m.offsetWidth+')'});
 addEventListener('resize',fit);tabs.forEach(t=>t.addEventListener('click',fit));fit();
-// ===== VSL =====
-const VSL_URL='assets/vsl.mp4'; // مثال: https://www.youtube.com/watch?v=XXXX  أو  https://vimeo.com/123  أو  video.mp4
-(()=>{const f=document.getElementById('vslFrame'),btn=document.getElementById('vslPoster');
- if(VSL_URL)document.getElementById('vslHint').textContent='';
- btn.addEventListener('click',()=>{if(!VSL_URL)return;let html;
-  const yt=VSL_URL.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/),vm=VSL_URL.match(/vimeo\.com\/(\d+)/);
-  if(yt)html=`<iframe src="https://www.youtube.com/embed/${yt[1]}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
-  else if(vm)html=`<iframe src="https://player.vimeo.com/video/${vm[1]}?autoplay=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
-  else html=`<video src="${VSL_URL}" controls autoplay playsinline></video>`;
-  f.innerHTML=html;});})();
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
 </body>
