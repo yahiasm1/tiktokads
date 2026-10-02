@@ -10,10 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0f0d0d; --bg-2:#262121; --card:#211e1e; --card-2:#312b2b;
-  --line:#312b2b; --line-2:#4b4747; --line-3:#5d5858;
-  --text:#f0eeee; --text-2:#dddada; --muted:#bfbaba; --muted-2:#9b9595;
-  --accent:#de1f26; --accent-hover:#fa4444; --accent-dark:#811b1f; --accent-soft:#ffe1e2;
+  --ink:#161823; --bg:#ffffff; --bg-2:#f8f8fa; --card:#ffffff; --card-2:#f1f1f2;
+  --line:#e3e3e4; --line-2:#ececee; --line-3:#d6d7da;
+  --text:#161823; --text-2:#2f3037; --muted:#54565e; --muted-2:#8a8b91;
+  --accent:#fe2c55; --accent-hover:#ff4d70; --accent-tint:#fff0f3; --cyan:#25f4ee; --cyan-tint:#e9fefd;
   --ok:#34c759; --radius:16px; --max:1180px;
   --font:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
 }
@@ -22,7 +22,7 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text-2);font-family:var(--font);font-size:16px;line-height:1.7;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img,svg{display:block;max-width:100%}
-h1,h2,h3,h4,h5,h6{margin:0;color:#fff;font-weight:700;line-height:1.35}
+h1,h2,h3,h4,h5,h6{margin:0;color:var(--ink);font-weight:700;line-height:1.35}
 p{margin:0}
 .container{max-width:var(--max);margin:0 auto;padding:0 20px}
 section{padding:80px 0}
@@ -30,10 +30,10 @@ section{padding:80px 0}
 
 /* Buttons */
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;line-height:20px;padding:11px 24px;border-radius:100px;border:2px solid var(--accent);background:var(--accent);color:#fff;transition:.2s;cursor:pointer}
-.btn:hover{background:var(--accent-hover);border-color:var(--accent-hover);box-shadow:0 0 48px rgba(50,50,71,.25)}
+.btn:hover{background:var(--accent-hover);border-color:var(--accent-hover);box-shadow:0 10px 30px rgba(254,44,85,.3)}
 .btn svg{transform:scaleX(-1)}
-.btn--light{background:#fff;border-color:#fff;color:#211e1e}
-.btn--light:hover{background:#f0eeee;border-color:#f0eeee}
+.btn--light{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn--light:hover{background:#2f3037;border-color:#2f3037;box-shadow:0 10px 30px rgba(22,24,35,.25)}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--muted-2);font-size:16px;margin-bottom:12px}
 .eyebrow svg{transform:scaleX(-1)}
 .section-head{text-align:center;max-width:620px;margin:0 auto 40px;display:flex;flex-direction:column;align-items:center;gap:12px}
@@ -41,16 +41,49 @@ section{padding:80px 0}
 .section-head p{color:var(--text-2)}
 @media (max-width:1024px){.section-head h2{font-size:24px}}
 
+/* ---- illustration system ---- */
+.art{position:relative;width:100%}
+.win{position:absolute;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(22,24,35,.14),0 0 0 1px rgba(22,24,35,.05)}
+.win .m-body{height:auto}
+.chipx{position:absolute;background:#fff;color:#161823;border-radius:12px;padding:9px 12px;display:flex;align-items:center;gap:9px;font-weight:600;box-shadow:0 12px 30px rgba(22,24,35,.16),0 0 0 1px rgba(22,24,35,.05);white-space:nowrap}
+.chipx small{display:block;color:#8a8b91;font-weight:500;font-size:10px}
+.ic{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#fff;font-size:14px;font-weight:700;flex:0 0 28px}
+.ic.g{background:#00c48c}.ic.r{background:#fe2c55}.ic.y{background:#ffb800}.ic.d{background:#161823}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.kpis .m-card{padding:8px 9px}.kpis .m-v{font-size:15px}
+.up{color:#00a676;font-size:9.5px;font-weight:600}.dn{color:#fe2c55;font-size:9.5px;font-weight:600}
+.badge-s{display:inline-flex;align-items:center;gap:5px;border-radius:20px;padding:3px 9px;font-size:10px;font-weight:700}
+.badge-s.red{background:#ffe8ec;color:#e0153b}.badge-s.grn{background:#e3f8f1;color:#00875f}.badge-s.yel{background:#fff4d6;color:#a06d00}
+.lst{display:flex;flex-direction:column}
+.lst div{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid #eeeff1;font-size:11px}
+.tog{width:26px;height:14px;border-radius:7px;background:#d6d7da;position:relative}.tog::after{content:"";position:absolute;left:2px;top:2px;width:10px;height:10px;border-radius:50%;background:#fff}
+.tog.on{background:#fe2c55}.tog.on::after{left:14px}
+.bub{max-width:78%;padding:8px 11px;border-radius:14px;font-size:11px;line-height:1.4}
+.bub.me{align-self:flex-end;background:#fe2c55;color:#fff;border-bottom-right-radius:4px}
+.bub.them{align-self:flex-start;background:#f1f1f2;border-bottom-left-radius:4px}
+.meta{font-size:9.5px;color:#8a8b91}
+.tl{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+.tl div{display:flex;gap:10px;align-items:flex-start}
+.tl i{width:18px;height:18px;border-radius:50%;flex:0 0 18px;display:grid;place-items:center;font-style:normal;font-size:10px;color:#fff;background:#d6d7da}
+.tl i.ok{background:#00c48c}.tl i.wait{background:#fff;border:2px solid #ffb800;border-right-color:transparent}
+.thumb{border-radius:8px;position:relative;overflow:hidden}
+.thumb::after{content:"▶";position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.9);font-size:12px}
+.offer-art{position:relative;aspect-ratio:300/150;margin:-4px 0 16px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,var(--accent-tint),var(--cyan-tint))}
+.stat .avs{display:flex;justify-content:center;margin-top:12px}
+.stat .avs i{width:28px;height:28px;border-radius:50%;border:2px solid var(--bg);margin-inline-start:-8px}
+.stat .rate{display:flex;justify-content:center;gap:3px;margin-top:12px}
+.stat .rate i{width:20px;height:20px;border-radius:4px;background:#04da8d;display:grid;place-items:center;font-style:normal;color:#fff;font-size:13px}
+
 /* Header */
-.header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#2d2b2b 0,#181717 67%,#000 100%)}
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .header .container{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:#fff;font-size:18px}
-.logo-mark{width:40px;height:40px;border-radius:10px;background:var(--accent);display:grid;place-items:center;font-size:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);font-size:18px}
+.logo-mark{width:40px;height:40px;border-radius:10px;color:#fff;background:var(--ink);box-shadow:-2px -2px 0 var(--cyan),2px 2px 0 var(--accent);display:grid;place-items:center;font-size:20px}
 .nav{display:flex;gap:36px}
-.nav a{color:#fff;font-weight:500;padding:22px 0;border-bottom:4px solid transparent;transition:.3s}
+.nav a{color:var(--ink);font-weight:500;padding:22px 0;border-bottom:4px solid transparent;transition:.3s}
 .nav a:hover{border-color:var(--accent)}
 .header .btn{padding:7px 22px;font-size:14px}
-.menu-toggle{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:6px}
+.menu-toggle{display:none;background:none;border:0;color:var(--ink);cursor:pointer;padding:6px}
 @media (max-width:1024px){
   .nav{display:none;position:absolute;top:100%;inset-inline:0;flex-direction:column;gap:0;background:var(--card);padding:8px 20px}
   .nav.open{display:flex}
@@ -59,15 +92,15 @@ section{padding:80px 0}
 }
 
 /* Hero */
-.hero{padding:50px 0}
+.hero{padding:50px 0;background:radial-gradient(600px 400px at 15% 30%,rgba(37,244,238,.14),transparent 70%),radial-gradient(600px 420px at 85% 10%,rgba(254,44,85,.10),transparent 70%)}
 .hero .container{display:flex;align-items:center;justify-content:space-between;gap:72px}
 .hero-copy{max-width:528px;display:flex;flex-direction:column;gap:12px}
 .chip{display:flex;align-items:center;gap:12px;color:var(--text);font-weight:500;margin-bottom:8px}
-.chip-icon{width:32px;height:32px;border-radius:8px;background:#46090b;border:1px solid #9c181d;display:grid;place-items:center}
+.chip-icon{width:32px;height:32px;border-radius:8px;background:var(--ink);display:grid;place-items:center}
 .hero h1{font-size:40px;line-height:1.45}
 .hero h1 span{display:block;color:var(--accent)}
 .hero-sub{font-size:18px;color:var(--text-2);margin-bottom:28px}
-.hero-art{flex:0 1 520px}
+.hero-art{flex:0 1 540px;width:100%}
 @media (max-width:1024px){.hero .container{flex-direction:column;gap:40px}.hero-copy{max-width:none}.hero h1{font-size:28px}.hero-art{width:100%;max-width:520px}}
 
 /* Grids & cards */
@@ -75,12 +108,11 @@ section{padding:80px 0}
 .g4{grid-template-columns:repeat(4,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
 @media (max-width:1024px){.g4,.g3{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:767px){.g4,.g3,.g2{grid-template-columns:1fr}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.card{background:var(--card);border:1px solid var(--line);box-shadow:0 8px 24px rgba(22,24,35,.04);border-radius:var(--radius);padding:20px}
 .card h3,.card h4{font-size:20px;font-weight:600;color:var(--text);margin-bottom:8px}
 .card p{color:var(--muted)}
 
-.problem-art{aspect-ratio:1;border-radius:var(--radius);background:radial-gradient(circle at 50% 40%,#3a1416 0,#1b1616 70%);border:1px solid var(--line);display:grid;place-items:center;margin-bottom:20px}
-.problem-art svg{width:42%;height:auto}
+.problem-art{position:relative;aspect-ratio:1;border-radius:var(--radius);background:linear-gradient(160deg,var(--accent-tint) 0,var(--bg-2) 60%,var(--cyan-tint) 100%);border:1px solid var(--line);overflow:hidden;margin-bottom:20px}
 .problem h3{font-size:20px;color:var(--text);margin-bottom:8px}
 .problem p{color:var(--muted)}
 
@@ -89,32 +121,29 @@ section{padding:80px 0}
 .benefit .ico{margin-bottom:20px;color:var(--accent)}
 
 /* Stats */
-.stats{background:linear-gradient(180deg,var(--bg) 0,var(--bg-2) 100%);padding-bottom:100px}
+.stats{background:var(--bg-2);padding-bottom:100px}
 .stats-row{display:flex;justify-content:center;align-items:center;gap:30px;margin:20px 0 70px}
-.stat{width:250px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:40px;text-align:center;box-shadow:0 48px 48px rgba(50,50,71,.25);transition:background .2s}
+.stat{width:250px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:40px;text-align:center;box-shadow:0 30px 50px rgba(22,24,35,.10);transition:background .2s}
 .stat:nth-child(odd){transform:rotate(12deg)} .stat:nth-child(even){transform:rotate(-12deg)}
-.stat:hover{background:var(--bg-2)}
-.stat b{display:block;font-size:32px;color:#f34047;line-height:1.4}
+.stat:hover{background:var(--accent-tint)}
+.stat b{display:block;font-size:36px;color:var(--accent);line-height:1.4}
 .stat span{font-size:18px;color:var(--text-2)}
-.badges{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap}
-.badge{border:1px dashed var(--line-3);border-radius:14px;padding:18px 26px;color:var(--muted);text-align:center;font-size:14px}
-.badge:first-child{transform:rotate(10deg)} .badge:last-child{transform:rotate(-8deg)}
 @media (max-width:1024px){.stats-row{flex-direction:column;gap:30px}.stat{transform:none!important}}
 
 /* Offer */
-.offer{background:linear-gradient(180deg,var(--bg-2) 0,var(--bg) 100%)}
-.offer-box{border:1px solid var(--line);border-radius:var(--radius);padding:150px 40px 40px;background:#000 radial-gradient(ellipse at 50% -10%,rgba(222,31,38,.45) 0,rgba(0,0,0,0) 60%)}
+.offer{background:var(--bg)}
+.offer-box{border:1px solid var(--line);border-radius:var(--radius);padding:150px 40px 40px;background:radial-gradient(ellipse at 85% 0,rgba(254,44,85,.16) 0,transparent 55%),radial-gradient(ellipse at 10% 100%,rgba(37,244,238,.18) 0,transparent 55%),var(--bg-2)}
 .offer-box .head{max-width:570px;margin-bottom:40px;display:flex;flex-direction:column;gap:12px}
 .offer-box h2{font-size:32px}
-.pill{display:inline-block;font-size:14px;color:var(--accent-soft);background:var(--accent-dark);border:1px solid var(--accent);border-radius:1000px;padding:4px 12px;margin-bottom:12px}
+.pill{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-tint);border-radius:1000px;padding:4px 12px;margin-bottom:12px}
 @media (max-width:1024px){.offer-box{padding:24px 20px}.offer-box h2{font-size:24px}}
 
 /* Comparison */
 .compare{display:flex;align-items:flex-end;margin-bottom:24px}
 .compare .col{flex:1}
-.cmp-labels{flex:0 0 290px!important;background:var(--card);border:1px solid var(--line);border-left:0;border-radius:0 12px 12px 0;padding:68px 0 20px}
-.cmp-ours{background:var(--card-2);border:1px solid var(--line-3);border-radius:12px 12px 0 0;padding-bottom:20px}
-.cmp-self{background:var(--card);border:1px solid var(--line);border-right:0;border-radius:12px 0 0 12px;padding-bottom:20px}
+.cmp-labels{flex:0 0 290px!important;background:var(--bg-2);border:1px solid var(--line);border-left:0;border-radius:0 12px 12px 0;padding:68px 0 20px}
+.cmp-ours{background:#fff;border:2px solid var(--accent);box-shadow:0 20px 50px rgba(254,44,85,.12);border-radius:12px 12px 0 0;padding-bottom:20px}
+.cmp-self{background:var(--bg-2);border:1px solid var(--line);border-right:0;border-radius:12px 0 0 12px;padding-bottom:20px}
 .cmp-head{text-align:center;padding:40px 20px;font-size:20px;font-weight:600;color:var(--text)}
 .cmp-self .cmp-head{padding:20px;color:var(--muted)}
 .cmp-list{list-style:none;margin:0;padding:20px 0;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
@@ -128,19 +157,19 @@ section{padding:80px 0}
 @media (max-width:767px){.cmp-list li{padding:0 6px;align-items:flex-start;font-size:14px;min-height:42px}}
 
 /* Who it's for */
-.fit{background:var(--card-2);border:1px solid var(--line-3);border-radius:var(--radius);padding:40px 20px 20px}
+.fit{background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px rgba(22,24,35,.05);border-radius:var(--radius);padding:40px 20px 20px}
 .fit h3{text-align:center;font-size:20px;font-weight:600;color:var(--text);margin-bottom:40px}
 .fit ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:20px}
 .fit li{display:flex;align-items:center;gap:10px}
 .fit li svg{flex:0 0 28px}
-.note{margin-top:20px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center;color:var(--muted)}
+.note{margin-top:20px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center;color:var(--muted)}
 .note b{font-weight:600}
 
 /* Steps */
 .steps{display:flex;gap:40px;align-items:center;margin-top:28px}
 .step-tabs{flex:0 0 513px;display:flex;flex-direction:column}
 .step-tab{all:unset;cursor:pointer;display:flex;justify-content:space-between;gap:12px;padding:24px;background:var(--bg);border-right:2px solid var(--line-3);transition:.3s}
-.step-tab:hover,.step-tab[aria-selected=true]{background:var(--card);border-color:var(--accent)}
+.step-tab:hover,.step-tab[aria-selected=true]{background:var(--accent-tint);border-color:var(--accent)}
 .step-tab strong{display:block;font-size:20px;font-weight:500;color:var(--text-2)}
 .step-tab small{display:none;color:var(--muted);font-size:16px;margin-top:8px}
 .step-tab[aria-selected=true] small{display:block}
@@ -149,7 +178,7 @@ section{padding:80px 0}
 .step-panels{flex:1;min-width:0;width:100%}
 .step-panel{width:100%;aspect-ratio:640/470;border-radius:15px;overflow:hidden;border:1px solid var(--line);position:relative;background:#f5f6f8}
 .step-panel[hidden]{display:none}
-.mock{position:absolute;top:0;left:0;width:640px;height:470px;transform-origin:0 0;direction:ltr;font-family:Inter,"Segoe UI",system-ui,sans-serif;font-size:12px;color:#161823;line-height:1.35;text-align:left}
+.mock{position:absolute;top:0;left:0;transform-origin:0 0;direction:ltr;font-family:Inter,"Segoe UI",system-ui,sans-serif;font-size:12px;color:#161823;line-height:1.35;text-align:left}
 .mock *{box-sizing:border-box}
 .m-bar{height:30px;background:#e9ebee;display:flex;align-items:center;gap:6px;padding:0 12px}
 .m-bar i{width:9px;height:9px;border-radius:50%;background:#ff5f57}.m-bar i:nth-child(2){background:#febc2e}.m-bar i:nth-child(3){background:#28c840}
@@ -215,8 +244,8 @@ section{padding:80px 0}
 @media (max-width:1024px){.steps{flex-direction:column}.step-tabs{flex:auto;width:100%}.step-tab small{display:block}}
 
 /* Why us */
-.why{background:linear-gradient(180deg,var(--bg) 0,var(--bg-2) 100%)}
-.why-box{display:flex;justify-content:space-between;gap:40px;background:#f0eeee;border-radius:var(--radius);padding:40px;color:#5d5858;align-items:center}
+.why{background:var(--bg-2)}
+.why-box{display:flex;justify-content:space-between;gap:40px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:40px;color:#5d5858;align-items:center}
 .why-copy{flex:0 1 443px}
 .why-copy .eyebrow{color:#5d5858;margin-bottom:24px}
 .why-copy h2{color:#312b2b;font-size:32px;margin-bottom:52px}
@@ -226,7 +255,7 @@ section{padding:80px 0}
 @media (max-width:1024px){.why-box{flex-direction:column;padding:20px}.why-copy{flex:auto}.why-copy h2{font-size:24px;margin-bottom:24px}}
 
 /* Testimonials */
-.testi{background:linear-gradient(180deg,var(--bg-2) 0,var(--bg) 100%)}
+.testi{background:var(--bg)}
 .testi-grid{position:relative;align-items:start;margin-bottom:12px}
 .testi-col{display:flex;flex-direction:column;gap:20px}
 .t-card{display:flex;flex-wrap:wrap;gap:24px}
@@ -237,7 +266,7 @@ section{padding:80px 0}
 .stars{display:flex;gap:4px}
 .stars i{width:24px;height:23px;border-radius:4px;background:var(--card-2);display:grid;place-items:center}
 .stars i::before{content:"★";color:#04da8d;font-style:normal;font-size:16px;line-height:1}
-.fade{position:absolute;bottom:0;inset-inline:0;height:260px;background:linear-gradient(180deg,rgba(15,13,13,0) 0,var(--bg) 100%);pointer-events:none}
+.fade{position:absolute;bottom:0;inset-inline:0;height:260px;background:linear-gradient(180deg,rgba(255,255,255,0) 0,var(--bg) 100%);pointer-events:none}
 @media (max-width:1024px){.testi-col:nth-child(n+2) .t-card:nth-child(n+2){display:none}}
 
 /* FAQ */
@@ -251,17 +280,17 @@ section{padding:80px 0}
 .faq .ans{padding:2px 12px 24px;color:var(--muted);font-size:15px}
 
 /* CTA */
-.cta{background:linear-gradient(180deg,#ee3737 0,#c82a2f 100%);padding:20px 0}
+.cta{background:linear-gradient(120deg,#fe2c55 0,#ff5b7b 60%,#ff8a6a 100%);padding:20px 0}
 .cta .container{display:flex;justify-content:space-between;align-items:center;gap:24px}
 .cta-copy{max-width:420px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
-.cta-copy h2{font-size:32px}
+.cta-copy h2{font-size:32px;color:#fff}
 .cta-copy p{color:#fff}
 .cta-copy .btn{margin-top:16px}
-.cta-art{flex:0 0 340px}
+.cta-art{flex:0 0 360px}
 @media (max-width:767px){.cta{padding:40px 0}.cta .container{flex-direction:column;align-items:flex-start;gap:40px}.cta-art{flex:auto;width:100%}}
 
 /* Footer */
-.footer{background:#000;color:#d5d5d5;font-size:14px;padding:48px 0 0}
+.footer{background:var(--ink);color:#d5d5d5;font-size:14px;padding:48px 0 0}
 .f-row{display:flex;flex-wrap:wrap;justify-content:space-between;padding-bottom:28px}
 .f-row>h6{font-size:16px;font-weight:600;color:#fff}
 .f-body{width:80%}
@@ -270,7 +299,7 @@ section{padding:80px 0}
 .f-links a:hover{color:#fff}
 .f-social{display:flex;flex-wrap:wrap;gap:16px 40px}
 .f-social a{color:#d5d5d5}.f-social a:hover{color:#fff}
-.copy{background:#101010;padding:10px 0;font-size:14px;color:#fff}
+.copy{background:#0d0e14;padding:10px 0;font-size:14px;color:#fff}
 @media (max-width:767px){.f-body{width:100%}.f-links{grid-template-columns:1fr}}
 </style>
 </head>
@@ -311,25 +340,23 @@ section{padding:80px 0}
       <div><a href="#contact" class="btn">احصل على حسابك
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12m0 0-4.5-4.5M15 9l-4.5 4.5" stroke="#ffe1e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 520 440">
-        <defs><radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#de1f26" stop-opacity=".45"/><stop offset="1" stop-color="#de1f26" stop-opacity="0"/></radialGradient></defs>
-        <circle cx="260" cy="220" r="210" fill="url(#glow)"/>
-        <circle cx="260" cy="220" r="150" fill="none" stroke="#4b4747" stroke-dasharray="4 8"/>
-        <circle cx="260" cy="220" r="95" fill="none" stroke="#5d5858"/>
-        <ellipse cx="260" cy="220" rx="95" ry="38" fill="none" stroke="#5d5858"/>
-        <line x1="260" y1="125" x2="260" y2="315" stroke="#5d5858"/>
-        <rect x="190" y="130" width="140" height="190" rx="22" fill="#211e1e" stroke="#de1f26" stroke-width="2"/>
-        <rect x="206" y="150" width="108" height="70" rx="10" fill="#312b2b"/>
-        <path d="M245 168v34l26-17z" fill="#de1f26"/>
-        <rect x="206" y="234" width="80" height="8" rx="4" fill="#5d5858"/><rect x="206" y="250" width="56" height="8" rx="4" fill="#4b4747"/>
-        <rect x="206" y="274" width="108" height="30" rx="15" fill="#de1f26"/>
-        <g fill="#211e1e" stroke="#312b2b"><rect x="40" y="90" width="120" height="58" rx="12"/><rect x="370" y="270" width="120" height="58" rx="12"/><rect x="380" y="70" width="104" height="48" rx="12"/></g>
-        <path d="M58 132l20-14 16 8 26-20 22 10" fill="none" stroke="#04da8d" stroke-width="3"/>
-        <text x="430" y="306" fill="#f34047" font-size="22" font-weight="700" text-anchor="middle" font-family="sans-serif">ROAS ↑</text>
-        <circle cx="406" cy="94" r="10" fill="#34c759"/><rect x="424" y="88" width="46" height="12" rx="6" fill="#5d5858"/>
-      </svg>
-    </div>
+    <div class="hero-art art" aria-hidden="true" style="aspect-ratio:560/470"><div class="mock" style="width:560px;height:470px">
+<div class="win" style="left:0;top:40px;width:410px">
+<div class="m-bar"><i></i><i></i><i></i><div class="m-url">ads-manager / agency / dashboard</div></div>
+<div class="m-top"><div class="m-brand"><b></b>Ads Manager</div><span class="badge-s grn">● Agency account</span></div>
+<div style="padding:12px 14px 14px;background:#f5f6f8">
+<div class="kpis"><div class="m-card"><div class="m-k">Spend</div><div class="m-v">$12.4K</div><span class="up">▲ 38%</span></div><div class="m-card"><div class="m-k">CPM</div><div class="m-v">$3.10</div><span class="up">▼ 22%</span></div><div class="m-card"><div class="m-k">CPA</div><div class="m-v">$7.90</div><span class="up">▼ 31%</span></div><div class="m-card"><div class="m-k">ROAS</div><div class="m-v">3.8x</div><span class="up">▲ 0.9</span></div></div>
+<div class="m-card" style="padding:10px 12px"><div style="display:flex;justify-content:space-between;margin-bottom:6px"><b style="font-size:11.5px">Performance · last 30 days</b><span class="meta"><span style="color:#fe2c55">━</span> Conversions &nbsp;<span style="color:#25c7c2">┅</span> CPA</span></div><svg viewBox="0 0 330 110" style="width:100%;height:110px;display:block"><defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fe2c55" stop-opacity=".28"/><stop offset="1" stop-color="#fe2c55" stop-opacity="0"/></linearGradient></defs>
+<g stroke="#eeeff1"><line x1="0" y1="20" x2="330" y2="20"/><line x1="0" y1="55" x2="330" y2="55"/><line x1="0" y1="90" x2="330" y2="90"/></g>
+<path d="M0 92 C30 88 45 80 70 78 S120 70 145 60 190 52 215 40 270 30 330 12 V110 H0Z" fill="url(#hg)"/>
+<path d="M0 92 C30 88 45 80 70 78 S120 70 145 60 190 52 215 40 270 30 330 12" fill="none" stroke="#fe2c55" stroke-width="2.5"/>
+<path d="M0 70 C40 72 70 74 110 78 S180 82 220 84 280 86 330 88" fill="none" stroke="#25c7c2" stroke-width="2" stroke-dasharray="4 4"/></svg></div>
+</div></div>
+<div style="position:absolute;right:0;top:20px"><div class="phone" style="width:170px;height:350px;flex:none"><div class="screen" style="background:linear-gradient(160deg,#3b1d5a 0,#a8245a 45%,#f2994a 100%)"><div class="feed">Following &nbsp; <u>For You</u></div><div class="prod" style="left:37px;top:94px"></div><div class="rail"><i class="av"></i><i class="hr"></i>12.4K<i></i>318<i></i>Share</div><div class="cap"><b>@yourbrand</b>New drop is here — limited stock! <em>Sponsored</em></div><div class="cta-bar">Shop now ›</div></div></div></div>
+<div class="chipx" style="left:250px;top:0"><span class="ic g">✓</span><span>Ad approved<small>Review completed</small></span></div>
+<div class="chipx" style="left:-6px;top:390px"><span class="ic r">$</span><span>Cashback +$420<small>This quarter</small></span></div>
+<div class="chipx" style="left:200px;top:410px"><span class="ic d">⚡</span><span>Top-up added<small>Balance $5,000</small></span></div>
+</div></div>
   </div>
 </section>
 
@@ -337,15 +364,28 @@ section{padding:80px 0}
 <section>
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>المشكلات</span>
+      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#fe2c55"/></svg>المشكلات</span>
       <h2>هل تشعر بالإحباط لأن إعلانات TikTok لا تحقق النتائج المتوقعة؟</h2>
       <p>قيود الحسابات وعدم استقرارها وغياب الدعم تُعيق حملاتك عن النمو.</p>
     </div>
     <div class="grid g4">
-      <div class="problem"><div class="problem-art"><svg viewBox="0 0 64 64" fill="none" stroke="#de1f26" stroke-width="4"><circle cx="32" cy="32" r="24"/><path d="m15 15 34 34"/></svg></div><h3>إيقاف الحسابات</h3><p>يعطّل الحملات ويوقف عرض الإعلانات فورًا</p></div>
-      <div class="problem"><div class="problem-art"><svg viewBox="0 0 64 64" fill="none" stroke="#de1f26" stroke-width="4" stroke-linecap="round"><circle cx="32" cy="34" r="22"/><path d="M32 22v12l8 6M26 6h12"/></svg></div><h3>إعداد بطيء</h3><p>يؤخّر تفعيل الحساب وإطلاق الحملات</p></div>
-      <div class="problem"><div class="problem-art"><svg viewBox="0 0 64 64" fill="none" stroke="#de1f26" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14h48v36H8z"/><path d="M8 24h48M18 40h10"/><path d="m46 4 0 8M42 8h8" stroke-width="3"/></svg></div><h3>هدر الميزانية</h3><p>استنزاف الإنفاق بسبب عرض إعلانات غير مستقر</p></div>
-      <div class="problem"><div class="problem-art"><svg viewBox="0 0 64 64" fill="none" stroke="#de1f26" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h44v30H30l-12 10V42h-8z"/><path d="M32 20v10M32 36v.5"/></svg></div><h3>غياب الدعم</h3><p>مشكلات بلا حلول تؤثر على أداء حملاتك</p></div>
+      <div class="problem"><div class="problem-art" aria-hidden="true"><div class="mock" style="width:300px;height:300px"><div class="win" style="left:30px;top:44px;width:240px;padding:14px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><b style="font-size:12px">Ad account · 7012…</b><span class="badge-s red">● Suspended</span></div>
+<div style="background:#ffe8ec;color:#c40f33;border-radius:8px;padding:8px 10px;font-size:10.5px;margin-bottom:6px">⚠ This account has been suspended. All ads have stopped.</div>
+<div class="lst"><div><span>Summer sale</span><span class="meta">Not delivering</span><span class="tog"></span></div><div><span>Retargeting</span><span class="meta">Not delivering</span><span class="tog"></span></div><div><span>New arrivals</span><span class="meta">Not delivering</span><span class="tog"></span></div></div></div></div></div><h3>إيقاف الحسابات</h3><p>يعطّل الحملات ويوقف عرض الإعلانات فورًا</p></div>
+      <div class="problem"><div class="problem-art" aria-hidden="true"><div class="mock" style="width:300px;height:300px"><div class="win" style="left:30px;top:40px;width:240px;padding:14px">
+<b style="font-size:12px">Account application</b><div class="meta" style="margin-bottom:6px">Submitted 9 days ago</div>
+<div class="tl"><div><i class="ok">✓</i><span>Submitted<br><span class="meta">Day 1</span></span></div><div><i class="wait"></i><span>Under review<br><span class="meta">Still waiting…</span></span></div><div><i></i><span style="color:#8a8b91">Approved</span></div><div><i></i><span style="color:#8a8b91">Campaign live</span></div></div>
+<div style="margin-top:12px"><span class="badge-s yel">⏳ Estimated time: unknown</span></div></div></div></div><h3>إعداد بطيء</h3><p>يؤخّر تفعيل الحساب وإطلاق الحملات</p></div>
+      <div class="problem"><div class="problem-art" aria-hidden="true"><div class="mock" style="width:300px;height:300px"><div class="win" style="left:30px;top:48px;width:240px;padding:14px">
+<b style="font-size:12px">Spend vs. results</b>
+<svg viewBox="0 0 210 80" style="width:100%;height:80px;margin:8px 0"><path d="M0 75 L35 62 70 50 105 36 140 24 175 14 210 4" fill="none" stroke="#fe2c55" stroke-width="2.5"/><path d="M0 72 L35 70 70 71 105 70 140 71 175 70 210 70" fill="none" stroke="#b7b8bd" stroke-width="2" stroke-dasharray="4 4"/></svg>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;text-align:center"><div><div class="meta">Spend</div><b>$2,340</b></div><div><div class="meta">Conv.</div><b>3</b></div><div><div class="meta">CPA</div><b style="color:#fe2c55">$780</b></div></div></div></div></div><h3>هدر الميزانية</h3><p>استنزاف الإنفاق بسبب عرض إعلانات غير مستقر</p></div>
+      <div class="problem"><div class="problem-art" aria-hidden="true"><div class="mock" style="width:300px;height:300px"><div class="win" style="left:30px;top:36px;width:240px;height:228px;display:flex;flex-direction:column">
+<div style="padding:10px 12px;border-bottom:1px solid #eeeff1;display:flex;align-items:center;gap:8px"><span class="ic d" style="width:22px;height:22px;flex-basis:22px;font-size:11px">?</span><b style="font-size:12px">Support</b><span class="meta" style="margin-left:auto">Offline</span></div>
+<div style="flex:1;padding:10px 12px;display:flex;flex-direction:column;gap:7px;background:#fafafa">
+<div class="bub me">My ads stopped delivering. Can you help?</div><div class="bub me">Hello? Any update?</div><div class="meta" style="align-self:flex-end">Sent 3 days ago · No reply</div></div>
+<div style="padding:8px 12px;border-top:1px solid #eeeff1"><div class="m-in" style="color:#b7b8bd">Waiting for an agent…</div></div></div></div></div><h3>غياب الدعم</h3><p>مشكلات بلا حلول تؤثر على أداء حملاتك</p></div>
     </div>
   </div>
 </section>
@@ -354,7 +394,7 @@ section{padding:80px 0}
 <section id="benefits">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>الميزة الأساسية</span>
+      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#fe2c55"/></svg>الميزة الأساسية</span>
       <h2>توقّف عن القلق بشأن الإعلانات وابدأ مع حسابات TikTok Agency</h2>
       <p>استفد من ميزات متقدمة واستقرار أعلى، ووسّع حملاتك عالميًا عبر حسابات إعلانية بمستوى الـ Agency.</p>
     </div>
@@ -373,16 +413,12 @@ section{padding:80px 0}
 <section class="stats">
   <div class="container">
     <div class="section-head" style="margin-bottom:0">
-      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>نتائج مُثبتة</span>
+      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#fe2c55"/></svg>نتائج مُثبتة</span>
       <h2>الأرقام لا تكذب</h2>
     </div>
     <div class="stats-row">
-      <div class="stat"><b><bdi dir="ltr">100+</bdi></b><span>تقييم إيجابي</span></div>
-      <div class="stat"><b><bdi dir="ltr">350+</bdi></b><span>عميل</span></div>
-    </div>
-    <div class="badges">
-      <div class="badge">ضع هنا شارة الأداء الخاصة بك</div>
-      <div class="badge">ضع هنا شارة الشراكة (إن وُجدت)</div>
+      <div class="stat"><b><bdi dir="ltr">100+</bdi></b><span>تقييم إيجابي</span><div class="rate"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div></div>
+      <div class="stat"><b><bdi dir="ltr">350+</bdi></b><span>عميل</span><div class="avs"><i style="background:#fe2c55"></i><i style="background:#25c7c2"></i><i style="background:#ffb800"></i><i style="background:#7c5cff"></i><i style="background:#5d5858"></i></div></div>
     </div>
   </div>
 </section>
@@ -392,14 +428,17 @@ section{padding:80px 0}
   <div class="container">
     <div class="offer-box">
       <div class="head">
-        <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>العرض</span>
+        <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#fe2c55"/></svg>العرض</span>
         <h2>ماذا تحصل عليه عند استخدام حسابات Agency الخاصة بنا</h2>
         <p>مصمّمة لتحقيق نتائج أفضل مع دعم موثوق من فريقنا.</p>
       </div>
       <div class="grid g3">
-        <div class="card"><span class="pill">Cashback</span><h4>Cashback مجزٍ على الإنفاق</h4><p>تحصل على نسبة Cashback أعلى كلما زاد إنفاقك الإعلاني الفصلي.</p></div>
-        <div class="card"><span class="pill">شهر مجاني</span><h4>Auto Pilot</h4><p>أتمِت حملاتك بقواعد تحكّم ذكية ومراقبة للأداء في الوقت الفعلي.</p></div>
-        <div class="card"><span class="pill"><bdi dir="ltr">20</bdi> فيديو مجانًا</span><h4>Creative Fusion</h4><p>أنشئ إعلانات جديدة من أفضل مقاطعك أداءً لتفادي تشبّع الجمهور.</p></div>
+        <div class="card"><div class="offer-art" aria-hidden="true"><div class="mock" style="width:300px;height:150px"><div class="win" style="left:16px;top:14px;width:268px;height:122px;padding:10px 12px"><div style="display:flex;justify-content:space-between"><b style="font-size:11px">Quarterly Cashback</b><span class="badge-s grn">+$420</span></div>
+<div style="display:flex;align-items:flex-end;gap:12px;height:66px;margin-top:8px"><div style="flex:1;text-align:center"><div style="height:18px;border-radius:5px 5px 0 0;background:#ffd3dc"></div><div class="meta" style="margin-top:3px">Tier 1</div></div><div style="flex:1;text-align:center"><div style="height:32px;border-radius:5px 5px 0 0;background:#ff9fb2"></div><div class="meta" style="margin-top:3px">Tier 2</div></div><div style="flex:1;text-align:center"><div style="height:46px;border-radius:5px 5px 0 0;background:#ff6b88"></div><div class="meta" style="margin-top:3px">Tier 3</div></div><div style="flex:1;text-align:center"><div style="height:60px;border-radius:5px 5px 0 0;background:#fe2c55"></div><div class="meta" style="margin-top:3px">Tier 4</div></div></div></div></div></div><span class="pill">Cashback</span><h4>Cashback مجزٍ على الإنفاق</h4><p>تحصل على نسبة Cashback أعلى كلما زاد إنفاقك الإعلاني الفصلي.</p></div>
+        <div class="card"><div class="offer-art" aria-hidden="true"><div class="mock" style="width:300px;height:150px"><div class="win" style="left:16px;top:14px;width:268px;height:122px;padding:10px 12px"><b style="font-size:11px">Auto Pilot rules</b>
+<div class="lst" style="margin-top:4px"><div><span><b style="color:#fe2c55">IF</b> CPA &gt; $15 for 2h → Pause</span><span class="tog on"></span></div><div><span><b style="color:#fe2c55">IF</b> ROAS &gt; 3x → Budget +20%</span><span class="tog on"></span></div><div><span><b style="color:#fe2c55">IF</b> CTR &lt; 0.8% → Alert</span><span class="tog"></span></div></div></div></div></div><span class="pill">شهر مجاني</span><h4>Auto Pilot</h4><p>أتمِت حملاتك بقواعد تحكّم ذكية ومراقبة للأداء في الوقت الفعلي.</p></div>
+        <div class="card"><div class="offer-art" aria-hidden="true"><div class="mock" style="width:300px;height:150px"><div class="win" style="left:16px;top:14px;width:268px;height:122px;padding:10px 12px"><b style="font-size:11px">Creative Fusion</b>
+<div style="display:flex;align-items:center;gap:7px;margin-top:9px"><div class="thumb" style="width:40px;height:70px;background:linear-gradient(160deg,#3b1d5a,#f2994a)"></div><div class="thumb" style="width:40px;height:70px;background:linear-gradient(160deg,#0f5b5a,#25f4ee)"></div><div class="thumb" style="width:40px;height:70px;background:linear-gradient(160deg,#5a0f2a,#fe2c55)"></div><b style="color:#fe2c55;font-size:16px">→</b><div class="thumb" style="width:48px;height:84px;background:linear-gradient(160deg,#3b1d5a,#fe2c55 55%,#25f4ee);box-shadow:0 0 0 2px #fe2c55"></div><span class="badge-s grn" style="margin-left:2px">New</span></div></div></div></div><span class="pill"><bdi dir="ltr">20</bdi> فيديو مجانًا</span><h4>Creative Fusion</h4><p>أنشئ إعلانات جديدة من أفضل مقاطعك أداءً لتفادي تشبّع الجمهور.</p></div>
       </div>
     </div>
   </div>
@@ -409,7 +448,7 @@ section{padding:80px 0}
 <section id="compare">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>المقارنة</span>
+      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#fe2c55"/></svg>المقارنة</span>
       <h2>اكتشف لماذا ينتقل المعلنون إلى حسابات TikTok Agency</h2>
     </div>
     <div class="compare">
@@ -431,7 +470,7 @@ section{padding:80px 0}
 <section>
   <div class="container" style="max-width:1020px">
     <div class="section-head">
-      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>لمن هذه الخدمة؟</span>
+      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#fe2c55"/></svg>لمن هذه الخدمة؟</span>
       <h2>فيمَ تستخدم حساب TikTok Agency؟</h2>
     </div>
     <div class="grid g2">
@@ -450,7 +489,7 @@ section{padding:80px 0}
 <section id="process">
   <div class="container">
     <div class="section-head" style="max-width:732px;margin-bottom:0">
-      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>آلية العمل</span>
+      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#fe2c55"/></svg>آلية العمل</span>
       <h2>جهّز حساب TikTok Agency الخاص بك في <bdi dir="ltr">3</bdi> خطوات بسيطة</h2>
     </div>
     <div class="steps">
@@ -460,7 +499,7 @@ section{padding:80px 0}
         <button class="step-tab" role="tab" aria-selected="false" aria-controls="p3"><span><strong>الخطوة 3: أطلق حملتك</strong><small>ابدأ تشغيل إعلاناتك بدعم من فريقنا</small></span><svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 18 6 6m0 0h8M6 6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
       <div class="step-panels">
-        <div class="step-panel" id="p1" role="tabpanel"><div class="mock"><div class="m-bar"><i></i><i></i><i></i><div class="m-url">ads-manager / agency / your-account</div></div><div class="m-top"><div class="m-brand"><b></b>Ads Manager</div><div class="m-tabs"><span class=on>Dashboard</span><span>Campaign</span><span>Tools</span><span>Analytics</span></div><div class="m-av"></div></div><div class="m-body"><div class="m-side"><span>Dashboard</span><span>Campaign</span><span>Assets</span><span>Finance</span><span class=on>Account</span></div><div class="m-main">
+        <div class="step-panel" id="p1" role="tabpanel"><div class="mock" style="width:640px;height:470px"><div class="m-bar"><i></i><i></i><i></i><div class="m-url">ads-manager / agency / your-account</div></div><div class="m-top"><div class="m-brand"><b></b>Ads Manager</div><div class="m-tabs"><span class=on>Dashboard</span><span>Campaign</span><span>Tools</span><span>Analytics</span></div><div class="m-av"></div></div><div class="m-body"><div class="m-side"><span>Dashboard</span><span>Campaign</span><span>Assets</span><span>Finance</span><span class=on>Account</span></div><div class="m-main">
 <div class="m-h">Apply for an Agency ad account</div>
 <div class="m-steps"><span class="done">1 · Business info</span><span>2 · Billing</span><span>3 · Review</span></div>
 <div class="m-card"><div class="m-grid">
@@ -473,7 +512,7 @@ section{padding:80px 0}
 <div class="m-row"><span class="m-btn gh">Save draft</span><span class="m-btn">Submit for review</span></div></div>
 <div class="m-toast"><span class="m-dot"></span>Compliance review · In progress</div>
 </div></div></div></div>
-        <div class="step-panel" id="p2" role="tabpanel" hidden><div class="mock"><div class="m-bar"><i></i><i></i><i></i><div class="m-url">ads-manager / agency / your-account</div></div><div class="m-top"><div class="m-brand"><b></b>Ads Manager</div><div class="m-tabs"><span class=on>Dashboard</span><span>Campaign</span><span>Tools</span><span>Analytics</span></div><div class="m-av"></div></div><div class="m-body"><div class="m-side"><span>Dashboard</span><span>Campaign</span><span>Assets</span><span class=on>Finance</span><span>Account</span></div><div class="m-main">
+        <div class="step-panel" id="p2" role="tabpanel" hidden><div class="mock" style="width:640px;height:470px"><div class="m-bar"><i></i><i></i><i></i><div class="m-url">ads-manager / agency / your-account</div></div><div class="m-top"><div class="m-brand"><b></b>Ads Manager</div><div class="m-tabs"><span class=on>Dashboard</span><span>Campaign</span><span>Tools</span><span>Analytics</span></div><div class="m-av"></div></div><div class="m-body"><div class="m-side"><span>Dashboard</span><span>Campaign</span><span>Assets</span><span class=on>Finance</span><span>Account</span></div><div class="m-main">
 <div class="m-h">Payment · Add balance</div>
 <div class="m-bal"><div class="m-card"><div class="m-k">Account balance</div><div class="m-v">$5,000.00 <small>+$5,000</small></div></div>
 <div class="m-card"><div class="m-k">Cashback this quarter</div><div class="m-v">$150.00</div></div></div>
@@ -485,7 +524,7 @@ section{padding:80px 0}
 <div class="m-row"><span class="m-btn">Confirm top-up</span></div></div>
 <div class="m-toast"><span class="m-dot ok"></span>Ad account active · Ready to launch</div>
 </div></div></div></div>
-        <div class="step-panel" id="p3" role="tabpanel" hidden><div class="mock"><div class="m-bar"><i></i><i></i><i></i><div class="m-url">ads-manager / agency / your-account</div></div><div class="m-top"><div class="m-brand"><b></b>Ads Manager</div><div class="m-tabs"><span>Dashboard</span><span class=on>Campaign</span><span>Tools</span><span>Analytics</span></div><div class="m-av"></div></div><div class="m-body"><div class="m-side"><span>Dashboard</span><span class=on>Campaign</span><span>Assets</span><span>Finance</span><span>Account</span></div><div class="m-main"><div class="m-split"><div>
+        <div class="step-panel" id="p3" role="tabpanel" hidden><div class="mock" style="width:640px;height:470px"><div class="m-bar"><i></i><i></i><i></i><div class="m-url">ads-manager / agency / your-account</div></div><div class="m-top"><div class="m-brand"><b></b>Ads Manager</div><div class="m-tabs"><span>Dashboard</span><span class=on>Campaign</span><span>Tools</span><span>Analytics</span></div><div class="m-av"></div></div><div class="m-body"><div class="m-side"><span>Dashboard</span><span class=on>Campaign</span><span>Assets</span><span>Finance</span><span>Account</span></div><div class="m-main"><div class="m-split"><div>
 <div class="m-h">Create campaign</div>
 <div class="m-k" style="margin-bottom:6px">Advertising objective</div>
 <div class="m-obj"><span>Reach</span><span>Traffic</span><span class="on">Website conversions</span><span>Product sales</span></div>
@@ -511,13 +550,26 @@ section{padding:80px 0}
   <div class="container">
     <div class="why-box">
       <div class="why-copy">
-        <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>لماذا تختارنا</span>
+        <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#fe2c55"/></svg>لماذا تختارنا</span>
         <h2>اخترنا إن كنت تريد حسابات تواصل العمل بثبات مع توسّعك…</h2>
         <div class="why-item" data-check><div><h3>شراكة تسويقية مع TikTok</h3><p>احصل على حسابات بمستوى Agency مع مزايا حصرية من المنصة.</p></div></div>
         <div class="why-item" data-check><div><h3>دعم مخصص للحساب</h3><p>نرشدك خلال الإعداد ونضمن تشغيلًا مستقرًا ومتوافقًا مع السياسات.</p></div></div>
         <div class="why-item" data-check><div><h3>تواصل مباشر مع TikTok</h3><p>دعم ذو أولوية وحلّ أسرع للمشكلات عبر قناة تواصل مباشرة.</p></div></div>
       </div>
-      <div class="why-art" aria-hidden="true"><svg viewBox="0 0 560 520"><circle cx="280" cy="260" r="230" fill="#e4e1e1"/><rect x="170" y="90" width="220" height="340" rx="28" fill="#312b2b"/><rect x="190" y="120" width="180" height="120" rx="14" fill="#de1f26"/><path d="M262 150v60l50-30z" fill="#fff"/><g fill="#5d5858"><rect x="190" y="262" width="140" height="12" rx="6"/><rect x="190" y="288" width="100" height="12" rx="6"/></g><rect x="190" y="330" width="180" height="70" rx="12" fill="#211e1e"/><path d="M206 382l30-20 26 10 34-26 40 16" fill="none" stroke="#04da8d" stroke-width="4"/><circle cx="420" cy="130" r="40" fill="#9c181d"/><path d="m402 130 12 12 24-24" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="why-art art" aria-hidden="true" style="aspect-ratio:560/500"><div class="mock" style="width:560px;height:500px">
+<div style="position:absolute;inset:20px 30px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffe3e9,#e9fefd)"></div>
+<div class="win" style="left:40px;top:40px;width:300px;height:330px;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.18)">
+<div style="padding:12px 14px;border-bottom:1px solid #eeeff1;display:flex;align-items:center;gap:10px"><span class="ic r" style="border-radius:50%">AM</span><span><b style="font-size:12px">Your account manager</b><br><span class="meta"><span style="color:#00c48c">●</span> Online · replies in minutes</span></span></div>
+<div style="flex:1;padding:12px 14px;display:flex;flex-direction:column;gap:8px;background:#fafafa">
+<div class="bub me">Launching tomorrow. Can you add $5,000 to my ad account?</div><div class="meta" style="align-self:flex-end">10:02</div>
+<div class="bub them">Done ✅ Balance is updated and your account is ready to go.</div><div class="meta">10:04</div>
+<div class="bub them">I also checked your creatives against the ad policies, all good 👍</div></div>
+<div style="padding:9px 14px;border-top:1px solid #eeeff1"><div class="m-in" style="color:#b7b8bd">Type a message…</div></div></div>
+<div class="win" style="left:270px;top:250px;width:250px;padding:14px;box-shadow:0 24px 60px rgba(0,0,0,.18)"><div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:12px">Account health</b><span class="badge-s grn">Excellent</span></div>
+<div style="height:8px;border-radius:4px;background:#eeeff1;margin:10px 0 12px"><div style="width:92%;height:100%;border-radius:4px;background:linear-gradient(90deg,#00c48c,#25c7c2)"></div></div>
+<div class="lst"><div><span>Policy compliance</span><b style="color:#00a676">✓</b></div><div><span>Billing status</span><b style="color:#00a676">✓</b></div><div><span>Direct platform contact</span><b style="color:#00a676">✓</b></div></div></div>
+<div class="chipx" style="left:300px;top:60px"><span class="ic g">✓</span><span>Issue resolved<small>in 18 minutes</small></span></div>
+</div></div>
     </div>
   </div>
 </section>
@@ -526,7 +578,7 @@ section{padding:80px 0}
 <section class="testi" id="reviews">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>آراء العملاء</span>
+      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#fe2c55"/></svg>آراء العملاء</span>
       <h2>موثوقون من قِبل أكثر من <bdi dir="ltr">350</bdi> معلنًا يديرون حسابات TikTok Agency</h2>
     </div>
     <!-- استبدل البطاقات التالية بتقييمات حقيقية من عملائك (مع موافقتهم) -->
@@ -539,7 +591,7 @@ section{padding:80px 0}
 <section id="faq">
   <div class="container faq">
     <div class="section-head">
-      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#bd181e"/></svg>الأسئلة الشائعة</span>
+      <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#fe2c55"/></svg>الأسئلة الشائعة</span>
       <h2>لديك أسئلة؟ لدينا الإجابات</h2>
     </div>
     <details open><summary>ما هو حساب TikTok Agency الإعلاني؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
@@ -563,7 +615,11 @@ section{padding:80px 0}
       <p>جهّز حساب Agency الخاص بك وابدأ حملاتك بدعم كامل.</p>
       <a href="mailto:hello@example.com" class="btn btn--light">ابدأ الآن</a>
     </div>
-    <div class="cta-art" aria-hidden="true"><svg viewBox="0 0 347 280"><rect x="110" y="20" width="130" height="240" rx="22" fill="#fff" opacity=".95"/><rect x="124" y="44" width="102" height="130" rx="12" fill="#c82a2f"/><path d="M164 92v36l30-18z" fill="#fff"/><g fill="#e4e1e1"><rect x="124" y="190" width="80" height="10" rx="5"/><rect x="124" y="210" width="54" height="10" rx="5"/></g><circle cx="280" cy="70" r="34" fill="#fff" opacity=".25"/><circle cx="60" cy="200" r="24" fill="#fff" opacity=".2"/></svg></div>
+    <div class="cta-art art" aria-hidden="true" style="aspect-ratio:360/300"><div class="mock" style="width:360px;height:300px">
+<div style="position:absolute;left:110px;top:0"><div class="phone" style="width:150px;height:300px;flex:none"><div class="screen" style="background:linear-gradient(160deg,#121212 0,#3a1416 50%,#fe2c55 100%)"><div class="feed">Following &nbsp; <u>For You</u></div><div class="prod" style="left:27px;top:81px"></div><div class="rail"><i class="av"></i><i class="hr"></i>8.9K<i></i>318<i></i>Share</div><div class="cap"><b>@yourbrand</b>Launch day! Tap to shop. <em>Sponsored</em></div><div class="cta-bar">Shop now ›</div></div></div></div>
+<div class="chipx" style="left:0;top:40px"><span class="ic g">●</span><span>Campaign live<small>Delivering now</small></span></div>
+<div class="chipx" style="left:200px;top:200px"><span class="ic d">↗</span><span>ROAS 3.6x<small>First 7 days</small></span></div>
+</div></div>
   </div>
 </section>
 </main>
@@ -586,8 +642,8 @@ const ICONS={
   ok:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.7 5 7.5 14.2 3.3 10" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   no:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5 5 15M5 5l10 10" stroke="#bd181e" stroke-width="2" stroke-linecap="round"/></svg>',
   yes:'<svg width="28" height="28" viewBox="0 0 28 28"><rect width="28" height="28" rx="14" fill="#34c759"/><path d="M12 19 7.2 14.2l1.2-1.2 3.6 3.6L19.6 9l1.2 1.2z" fill="#fff"/></svg>',
-  ban:'<svg width="28" height="28" viewBox="0 0 28 28"><rect width="28" height="28" rx="14" fill="#de1f26"/><path d="m9.3 19.8-1.1-1.1 4.6-4.7-4.6-4.7 1.1-1.1 4.7 4.6 4.7-4.6 1.1 1.1-4.6 4.7 4.6 4.7-1.1 1.1-4.7-4.6z" fill="#fef2f2"/></svg>',
-  check:'<svg width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14.7" fill="#9c181d"/><path d="m10 16.5 4 4 8-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+  ban:'<svg width="28" height="28" viewBox="0 0 28 28"><rect width="28" height="28" rx="14" fill="#fe2c55"/><path d="m9.3 19.8-1.1-1.1 4.6-4.7-4.6-4.7 1.1-1.1 4.7 4.6 4.7-4.6 1.1 1.1-4.6 4.7 4.6 4.7-1.1 1.1-4.7-4.6z" fill="#fef2f2"/></svg>',
+  check:'<svg width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14.7" fill="#fe2c55"/><path d="m10 16.5 4 4 8-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 };
 document.querySelectorAll('[data-icon]').forEach(ul=>ul.querySelectorAll('li').forEach(li=>li.insertAdjacentHTML('afterbegin',ICONS[ul.dataset.icon])));
 document.querySelectorAll('[data-check]').forEach(el=>el.insertAdjacentHTML('afterbegin',ICONS.check));
@@ -608,7 +664,7 @@ document.querySelectorAll('.faq details').forEach(d=>d.addEventListener('toggle'
 const nav=document.getElementById('nav'),mt=document.getElementById('menuToggle');
 mt.addEventListener('click',()=>{const o=nav.classList.toggle('open');mt.setAttribute('aria-expanded',o);});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-const fit=()=>document.querySelectorAll('.step-panel:not([hidden]) .mock').forEach(m=>{m.style.transform='scale('+m.parentElement.clientWidth/640+')'});
+const fit=()=>document.querySelectorAll('.mock').forEach(m=>{const w=m.parentElement.clientWidth;if(w)m.style.transform='scale('+w/m.offsetWidth+')'});
 addEventListener('resize',fit);tabs.forEach(t=>t.addEventListener('click',fit));fit();
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
