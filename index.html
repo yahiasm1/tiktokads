@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>حسابات TikTok Agency الإعلانية | اسم العلامة</title>
-<meta name="description" content="حسابات TikTok Agency الإعلانية: إطلاق أسرع، استقرار أعلى، Cashback على الإنفاق، شحن رصيد مرن ودعم مخصص لحملاتك.">
+<meta name="description" content="حساب TikTok Agency بـ 5500 دج (22$): نفس نظام فايسبوك، يدعم جميع البطاقات، صالح مدى الحياة، بدون عمولة، مع Cashback وبونيس مجاني.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -136,6 +136,27 @@ section{padding:80px 0}
 .offer-box .head{max-width:570px;margin-bottom:40px;display:flex;flex-direction:column;gap:12px}
 .offer-box h2{font-size:32px}
 .pill{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-tint);border-radius:1000px;padding:4px 12px;margin-bottom:12px}
+.offer-grid{display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:20px;align-items:stretch}
+@media (max-width:1024px){.offer-grid{grid-template-columns:1fr 1fr}.price-card{grid-column:1/-1}}
+@media (max-width:767px){.offer-grid{grid-template-columns:1fr}}
+.price-card{background:var(--ink);color:#fff;border:0;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.price-card::before{content:"";position:absolute;inset:auto -60px -80px auto;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(254,44,85,.45),transparent 70%)}
+.price-card h4,.price-card .price{color:#fff}
+.price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:4px 0 18px}
+.price b{font-size:44px;line-height:1.1;font-weight:700}
+.price s{color:#8a8b91;font-size:15px}
+.price span{background:rgba(37,244,238,.15);color:var(--cyan);border-radius:8px;padding:2px 10px;font-weight:600;font-size:15px}
+.checks{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:12px}
+.checks li{display:flex;gap:10px;align-items:center}
+.checks li svg{flex:0 0 22px}
+.price-card .checks li{color:#e9e9ec}
+.price-card .btn{margin-top:auto;justify-content:center;position:relative}
+.bonus{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.bonus li{display:flex;gap:10px;align-items:flex-start;color:var(--text-2)}
+.bonus li i{font-style:normal;flex:0 0 30px;height:30px;border-radius:9px;background:var(--accent-tint);display:grid;place-items:center;font-size:15px}
+.warn{margin-top:20px;display:flex;gap:10px;align-items:center;background:#fff8e6;border:1px solid #ffe2a3;color:#7a5200;border-radius:12px;padding:12px 16px;font-weight:500}
+.hero-price{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:100px;padding:6px 8px 6px 16px;margin-bottom:20px;box-shadow:0 8px 24px rgba(22,24,35,.06);font-weight:600;color:var(--ink);align-self:flex-start}
+.hero-price em{font-style:normal;background:var(--accent);color:#fff;border-radius:100px;padding:3px 12px}
 @media (max-width:1024px){.offer-box{padding:24px 20px}.offer-box h2{font-size:24px}}
 
 /* Comparison */
@@ -337,7 +358,8 @@ section{padding:80px 0}
       </div>
       <h1>انطلق إلى الأسواق العالمية مع <span>حسابات TikTok Agency الإعلانية المميزة</span></h1>
       <p class="hero-sub">وسّع حملاتك بلا قيود، وتجنّب الإيقاف المفاجئ، وأدر إعلاناتك على حسابات مستقرة وموثوقة.</p>
-      <div><a href="#contact" class="btn">احصل على حسابك
+      <span class="hero-price">بدون عمولة · صالح مدى الحياة <em><bdi dir="ltr">5500</bdi> دج (<bdi dir="ltr">$22</bdi>)</em></span>
+      <div><a href="#offer" class="btn">احصل على حسابك
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12m0 0-4.5-4.5M15 9l-4.5 4.5" stroke="#ffe1e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div>
     <div class="hero-art art" aria-hidden="true" style="aspect-ratio:560/470"><div class="mock" style="width:560px;height:470px">
@@ -354,8 +376,8 @@ section{padding:80px 0}
 </div></div>
 <div style="position:absolute;right:0;top:20px"><div class="phone" style="width:170px;height:350px;flex:none"><div class="screen" style="background:linear-gradient(160deg,#3b1d5a 0,#a8245a 45%,#f2994a 100%)"><div class="feed">Following &nbsp; <u>For You</u></div><div class="prod" style="left:37px;top:94px"></div><div class="rail"><i class="av"></i><i class="hr"></i>12.4K<i></i>318<i></i>Share</div><div class="cap"><b>@yourbrand</b>New drop is here — limited stock! <em>Sponsored</em></div><div class="cta-bar">Shop now ›</div></div></div></div>
 <div class="chipx" style="left:250px;top:0"><span class="ic g">✓</span><span>Ad approved<small>Review completed</small></span></div>
-<div class="chipx" style="left:-6px;top:390px"><span class="ic r">$</span><span>Cashback +$420<small>This quarter</small></span></div>
-<div class="chipx" style="left:200px;top:410px"><span class="ic d">⚡</span><span>Top-up added<small>Balance $5,000</small></span></div>
+<div class="chipx" style="left:-6px;top:390px"><span class="ic r">$</span><span>Cashback returned<small>Month 2 · up to $6,000</small></span></div>
+<div class="chipx" style="left:200px;top:410px"><span class="ic d">💳</span><span>Spend first, pay later<small>All cards supported</small></span></div>
 </div></div>
   </div>
 </section>
@@ -403,7 +425,7 @@ section{padding:80px 0}
       <div class="card benefit"><svg class="ico" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M23 2.6c1.4 0 2.3 1.3 2 2.5l-.1.3-3.3 8.6h4c1.6 0 2.5 1.7 1.8 3l-.2.2-12 16.1c-.8 1.2-2.6.4-2.4-1l1.2-11H9.7c-1.5 0-2.4-1.5-1.9-2.8l6.3-14.6A2 2 0 0 1 15.9 2.6H23Z"/></svg><h4>موافقة أسرع على الإعلانات</h4><p>أطلق حملاتك بسرعة دون تأخير في المراجعة</p></div>
       <div class="card benefit"><svg class="ico" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M22.5 27c.2 0 .5-.1.6-.3.2-.2.3-.4.3-.6V5.9c0-.2-.1-.3-.1-.5a.9.9 0 0 0-1.3-.3L4.5 15.2a.9.9 0 0 0 0 1.6L22 26.9c.2.1.3.1.5.1ZM28 5h-1.8v22H28V5Z"/></svg><h4>عرض إعلانات متواصل</h4><p>استبدال فوري للحسابات للحفاظ على استمرارية الحملة</p></div>
       <div class="card benefit"><svg class="ico" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M29 1.1c-.9 0-1.7.8-1.7 1.7v24.7H1.7C.8 27.5 0 28.3 0 29.2s.8 1.7 1.7 1.7h25.6c1.9 0 3.4-1.5 3.4-3.4V2.8c0-.9-.8-1.7-1.7-1.7Z"/><path d="M25.1 11a1.7 1.7 0 0 0-2.4 0L17 16.6 11.4 11h-.1a1.7 1.7 0 0 0-2.3.1l-5.6 5.6v-1.5a1.7 1.7 0 1 0-3.4 0v5.5c0 .9.8 1.7 1.7 1.7h5.5a1.7 1.7 0 1 0 0-3.4H5.8L10.2 14.6l5.6 5.6c.7.7 1.7.7 2.4 0l6.8-6.8a1.7 1.7 0 0 0 .1-2.4Z"/></svg><h4>تكاليف إعلانية أقل</h4><p>خفّض الـ CPA والـ CPM وحسّن كفاءة إنفاقك</p></div>
-      <div class="card benefit"><svg class="ico" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0a16 16 0 1 0 0 32 16 16 0 0 0 0-32Zm1.7 23.4v1.2a1.7 1.7 0 1 1-3.4 0v-1.2a4.3 4.3 0 0 1-3.6-3 1.7 1.7 0 0 1 3.2-1.1c.2.4.6.7 1.1.7H17a1.1 1.1 0 0 0 .2-2.3l-3.4-.7a4.3 4.3 0 0 1 .5-8.4V7.4a1.7 1.7 0 1 1 3.4 0v1.2c1.6.3 2.9 1.4 3.5 3a1.7 1.7 0 0 1-3.2 1.1 1.1 1.1 0 0 0-1.1-.7h-2.2a.9.9 0 0 0-.2 1.7l3.4.7a4.3 4.3 0 0 1-.2 8.9Z"/></svg><h4>شحن فوري للرصيد</h4><p>أضف الأموال في أي وقت وتجنّب انقطاع العرض</p></div>
+      <div class="card benefit"><svg class="ico" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0a16 16 0 1 0 0 32 16 16 0 0 0 0-32Zm1.7 23.4v1.2a1.7 1.7 0 1 1-3.4 0v-1.2a4.3 4.3 0 0 1-3.6-3 1.7 1.7 0 0 1 3.2-1.1c.2.4.6.7 1.1.7H17a1.1 1.1 0 0 0 .2-2.3l-3.4-.7a4.3 4.3 0 0 1 .5-8.4V7.4a1.7 1.7 0 1 1 3.4 0v1.2c1.6.3 2.9 1.4 3.5 3a1.7 1.7 0 0 1-3.2 1.1 1.1 1.1 0 0 0-1.1-.7h-2.2a.9.9 0 0 0-.2 1.7l3.4.7a4.3 4.3 0 0 1-.2 8.9Z"/></svg><h4>تخدم ومن بعد تخلّص</h4><p>نفس نظام فايسبوك: يدعم جميع البطاقات وبدون عمولة</p></div>
       <div class="card benefit"><svg class="ico" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M8 1.7A7.7 7.7 0 0 0 .3 9.3v.9C.7 22.2 10.4 31.7 22.3 31.7h.4c4.2 0 7.6-3.4 7.6-7.7v-.4c0-1.2-.7-2.3-1.9-2.8l-4.1-1.6a3.4 3.4 0 0 0-3.9.8l-2 2c-.1.1-.2.1-.3.1A12.7 12.7 0 0 1 9.9 13.9c0-.1 0-.2.1-.3l2-2c.9-.9 1.2-2.4.8-3.9L11.2 3.6A3 3 0 0 0 8.4 1.7H8Z"/></svg><h4>دعم متخصص على مدار الساعة</h4><p>حلّ المشكلات بسرعة مع فريق دعم مخصص</p></div>
     </div>
   </div>
@@ -424,22 +446,51 @@ section{padding:80px 0}
 </section>
 
 <!-- Offer -->
-<section class="offer">
+<section class="offer" id="offer">
   <div class="container">
     <div class="offer-box">
       <div class="head">
         <span class="eyebrow"><svg width="15" height="12" viewBox="0 0 15 12"><path d="M15 6 9 12H6V0h3l6 6ZM6 0H0v12h6V0Z" fill="#fe2c55"/></svg>العرض</span>
-        <h2>ماذا تحصل عليه عند استخدام حسابات Agency الخاصة بنا</h2>
-        <p>مصمّمة لتحقيق نتائج أفضل مع دعم موثوق من فريقنا.</p>
+        <h2>عرض حساب TikTok Agency: كل شيء تحتاجه لتنطلق</h2>
+        <p>حساب واحد بسعر واحد، مع Cashback وبونيس مجاني لتبدأ إعلاناتك بالطريقة الصحيحة.</p>
       </div>
-      <div class="grid g3">
-        <div class="card"><div class="offer-art" aria-hidden="true"><div class="mock" style="width:300px;height:150px"><div class="win" style="left:16px;top:14px;width:268px;height:122px;padding:10px 12px"><div style="display:flex;justify-content:space-between"><b style="font-size:11px">Quarterly Cashback</b><span class="badge-s grn">+$420</span></div>
-<div style="display:flex;align-items:flex-end;gap:12px;height:66px;margin-top:8px"><div style="flex:1;text-align:center"><div style="height:18px;border-radius:5px 5px 0 0;background:#ffd3dc"></div><div class="meta" style="margin-top:3px">Tier 1</div></div><div style="flex:1;text-align:center"><div style="height:32px;border-radius:5px 5px 0 0;background:#ff9fb2"></div><div class="meta" style="margin-top:3px">Tier 2</div></div><div style="flex:1;text-align:center"><div style="height:46px;border-radius:5px 5px 0 0;background:#ff6b88"></div><div class="meta" style="margin-top:3px">Tier 3</div></div><div style="flex:1;text-align:center"><div style="height:60px;border-radius:5px 5px 0 0;background:#fe2c55"></div><div class="meta" style="margin-top:3px">Tier 4</div></div></div></div></div></div><span class="pill">Cashback</span><h4>Cashback مجزٍ على الإنفاق</h4><p>تحصل على نسبة Cashback أعلى كلما زاد إنفاقك الإعلاني الفصلي.</p></div>
-        <div class="card"><div class="offer-art" aria-hidden="true"><div class="mock" style="width:300px;height:150px"><div class="win" style="left:16px;top:14px;width:268px;height:122px;padding:10px 12px"><b style="font-size:11px">Auto Pilot rules</b>
-<div class="lst" style="margin-top:4px"><div><span><b style="color:#fe2c55">IF</b> CPA &gt; $15 for 2h → Pause</span><span class="tog on"></span></div><div><span><b style="color:#fe2c55">IF</b> ROAS &gt; 3x → Budget +20%</span><span class="tog on"></span></div><div><span><b style="color:#fe2c55">IF</b> CTR &lt; 0.8% → Alert</span><span class="tog"></span></div></div></div></div></div><span class="pill">شهر مجاني</span><h4>Auto Pilot</h4><p>أتمِت حملاتك بقواعد تحكّم ذكية ومراقبة للأداء في الوقت الفعلي.</p></div>
-        <div class="card"><div class="offer-art" aria-hidden="true"><div class="mock" style="width:300px;height:150px"><div class="win" style="left:16px;top:14px;width:268px;height:122px;padding:10px 12px"><b style="font-size:11px">Creative Fusion</b>
-<div style="display:flex;align-items:center;gap:7px;margin-top:9px"><div class="thumb" style="width:40px;height:70px;background:linear-gradient(160deg,#3b1d5a,#f2994a)"></div><div class="thumb" style="width:40px;height:70px;background:linear-gradient(160deg,#0f5b5a,#25f4ee)"></div><div class="thumb" style="width:40px;height:70px;background:linear-gradient(160deg,#5a0f2a,#fe2c55)"></div><b style="color:#fe2c55;font-size:16px">→</b><div class="thumb" style="width:48px;height:84px;background:linear-gradient(160deg,#3b1d5a,#fe2c55 55%,#25f4ee);box-shadow:0 0 0 2px #fe2c55"></div><span class="badge-s grn" style="margin-left:2px">New</span></div></div></div></div><span class="pill"><bdi dir="ltr">20</bdi> فيديو مجانًا</span><h4>Creative Fusion</h4><p>أنشئ إعلانات جديدة من أفضل مقاطعك أداءً لتفادي تشبّع الجمهور.</p></div>
+      <div class="offer-grid">
+        <div class="card price-card">
+          <span class="pill" style="background:rgba(254,44,85,.2);color:#ff8aa1;align-self:flex-start">💥 السعر اليوم</span>
+          <div class="price"><b><bdi dir="ltr">5500</bdi> دج</b><span><bdi dir="ltr">$22</bdi></span></div>
+          <ul class="checks">
+            <li><svg width="22" height="22" viewBox="0 0 28 28"><rect width="28" height="28" rx="14" fill="#25f4ee"/><path d="M12 19 7.2 14.2l1.2-1.2 3.6 3.6L19.6 9l1.2 1.2z" fill="#161823"/></svg>نفس نظام فايسبوك (تخدم ومن بعد تخلّص)</li>
+            <li><svg width="22" height="22" viewBox="0 0 28 28"><rect width="28" height="28" rx="14" fill="#25f4ee"/><path d="M12 19 7.2 14.2l1.2-1.2 3.6 3.6L19.6 9l1.2 1.2z" fill="#161823"/></svg>يدعم جميع البطاقات</li>
+            <li><svg width="22" height="22" viewBox="0 0 28 28"><rect width="28" height="28" rx="14" fill="#25f4ee"/><path d="M12 19 7.2 14.2l1.2-1.2 3.6 3.6L19.6 9l1.2 1.2z" fill="#161823"/></svg>صالح مدى الحياة</li>
+            <li><svg width="22" height="22" viewBox="0 0 28 28"><rect width="28" height="28" rx="14" fill="#25f4ee"/><path d="M12 19 7.2 14.2l1.2-1.2 3.6 3.6L19.6 9l1.2 1.2z" fill="#161823"/></svg>بدون عمولة</li>
+          </ul>
+          <a href="#contact" class="btn">خذ عرضك في نفس اليوم</a>
+        </div>
+        <div class="card">
+          <div class="offer-art" aria-hidden="true"><div class="mock" style="width:300px;height:150px"><div class="win" style="left:16px;top:14px;width:268px;height:122px;padding:10px 12px">
+<div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:11px">Cashback</b><span class="badge-s grn">🎁 Gifts all year</span></div>
+<div style="display:flex;align-items:flex-end;gap:10px;margin-top:8px">
+<div style="flex:1"><div style="height:56px;border-radius:6px;background:linear-gradient(180deg,#ff8aa1,#fe2c55);display:grid;place-items:center;color:#fff;font-weight:700;font-size:11px">$200 – $6,000</div><div class="meta" style="margin-top:4px;text-align:center">Month 1 · You spend</div></div>
+<b style="color:#fe2c55;font-size:18px;padding-bottom:22px">→</b>
+<div style="flex:1"><div style="height:56px;border-radius:6px;background:linear-gradient(180deg,#7ff9f5,#25c7c2);display:grid;place-items:center;color:#0b3d3b;font-weight:700;font-size:11px">Returned ✓</div><div class="meta" style="margin-top:4px;text-align:center">Month 2 · TikTok returns it</div></div>
+</div></div></div></div>
+          <span class="pill">Cashback</span>
+          <h4>Cashback على إنفاقك الأول</h4>
+          <p>اصرف بين <bdi dir="ltr">$200</bdi> إلى <bdi dir="ltr">$6000</bdi> في الشهر الأول و TikTok يرجعهالك في الشهر الثاني، مع عديد من الهدايا على مدار السنة.</p>
+        </div>
+        <div class="card">
+          <span class="pill">🔥 بونيس مجاني مع العرض</span>
+          <h4 style="margin-bottom:16px">كل ما تحتاجه لتبدأ صح</h4>
+          <ul class="bonus">
+            <li><i>🎥</i>فيديو دعم كامل خطوة بخطوة</li>
+            <li><i>⚙️</i>إنشاء TikTok Pixel وربطو مع YouCan وWordPress</li>
+            <li><i>🛒</i>ربط Shopify مع TikTok Pixel</li>
+            <li><i>🎓</i>كورس شامل لإعلانات TikTok</li>
+            <li><i>💬</i>كيفية إنشاء حملة رسائل احترافية</li>
+          </ul>
+        </div>
       </div>
+      <p class="warn">⛔ ملاحظة: لا يوجد ضمان على الـ Cashback 💰، الضمان يكون عند غلق الحساب فقط.</p>
     </div>
   </div>
 </section>
@@ -456,7 +507,7 @@ section{padding:80px 0}
         <li>الإعداد والتحكم</li><li>الوصول إلى الأسواق</li><li>ميزات الإعلانات</li><li>حدود الإنفاق</li><li>خيارات الدفع</li><li>استقرار الحساب</li><li>إدارة الرصيد</li><li>مستوى الدعم</li>
       </ul></div>
       <div class="col cmp-ours"><div class="cmp-head">حساب Agency لدينا</div><ul class="cmp-list" data-icon="ok">
-        <li>بإرشاد ودعم من الخبراء</li><li>الوصول إلى أسواق عالمية متعددة</li><li>جميع صيغ الإعلانات متاحة</li><li>إمكانية توسّع غير محدودة</li><li>طرق دفع متعددة ومرنة</li><li>حسابات مستقرة وعالية الثقة</li><li>إعادة توزيع الرصيد عند حدوث مشكلة</li><li>دعم مباشر من فريقنا</li>
+        <li>بإرشاد ودعم من الخبراء</li><li>الوصول إلى أسواق عالمية متعددة</li><li>جميع صيغ الإعلانات متاحة</li><li>إمكانية توسّع غير محدودة</li><li>جميع البطاقات · تخدم ومن بعد تخلّص</li><li>حسابات مستقرة وعالية الثقة</li><li>إعادة توزيع الرصيد عند حدوث مشكلة</li><li>دعم مباشر من فريقنا</li>
       </ul></div>
       <div class="col cmp-self"><div class="cmp-head">حساب Self-serve</div><ul class="cmp-list" data-icon="no">
         <li>يدوي من الألف إلى الياء</li><li>مقيّد بمنطقة الحساب</li><li>ميزات أساسية فقط</li><li>سقف ميزانية محدود</li><li>بطاقة ائتمان فقط</li><li>احتمال أعلى للإيقاف</li><li>رصيد غير قابل للسحب</li><li>لا يوجد دعم مخصص</li>
@@ -495,7 +546,7 @@ section{padding:80px 0}
     <div class="steps">
       <div class="step-tabs" role="tablist">
         <button class="step-tab" role="tab" aria-selected="true" aria-controls="p1"><span><strong>الخطوة 1: أرسل بياناتك</strong><small>قدّم تفاصيل نشاطك التجاري لمراجعة امتثال سريعة</small></span><svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 18 6 6m0 0h8M6 6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="step-tab" role="tab" aria-selected="false" aria-controls="p2"><span><strong>الخطوة 2: موّل حسابك</strong><small>أضف ميزانيتك الأولية وفعّل حسابك الإعلاني</small></span><svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 18 6 6m0 0h8M6 6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="step-tab" role="tab" aria-selected="false" aria-controls="p2"><span><strong>الخطوة 2: اربط بطاقتك</strong><small>يدعم جميع البطاقات، تخدم ومن بعد تخلّص (نفس نظام فايسبوك)</small></span><svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 18 6 6m0 0h8M6 6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <button class="step-tab" role="tab" aria-selected="false" aria-controls="p3"><span><strong>الخطوة 3: أطلق حملتك</strong><small>ابدأ تشغيل إعلاناتك بدعم من فريقنا</small></span><svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 18 6 6m0 0h8M6 6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
       <div class="step-panels">
@@ -506,23 +557,22 @@ section{padding:80px 0}
 <div class="m-f"><label>Business name</label><div class="m-in">Your Store LLC</div></div>
 <div class="m-f"><label>Website URL</label><div class="m-in foc">https://yourstore.com</div></div>
 <div class="m-f"><label>Industry</label><div class="m-in">E-commerce <span>▾</span></div></div>
-<div class="m-f"><label>Monthly ad spend</label><div class="m-in">$5,000 – $20,000 <span>▾</span></div></div>
+<div class="m-f"><label>Monthly ad spend</label><div class="m-in">$200 – $6,000 <span>▾</span></div></div>
 <div class="m-f" style="grid-column:1/-1"><label>Target markets</label><div class="m-in"><div class="m-chips"><em>United States ×</em><em>Saudi Arabia ×</em><em>UAE ×</em><em>United Kingdom ×</em></div></div></div>
 </div><div class="m-chk"><b>✓</b>I confirm my products comply with the advertising policies</div>
 <div class="m-row"><span class="m-btn gh">Save draft</span><span class="m-btn">Submit for review</span></div></div>
 <div class="m-toast"><span class="m-dot"></span>Compliance review · In progress</div>
 </div></div></div></div>
         <div class="step-panel" id="p2" role="tabpanel" hidden><div class="mock" style="width:640px;height:470px"><div class="m-bar"><i></i><i></i><i></i><div class="m-url">ads-manager / agency / your-account</div></div><div class="m-top"><div class="m-brand"><b></b>Ads Manager</div><div class="m-tabs"><span class=on>Dashboard</span><span>Campaign</span><span>Tools</span><span>Analytics</span></div><div class="m-av"></div></div><div class="m-body"><div class="m-side"><span>Dashboard</span><span>Campaign</span><span>Assets</span><span class=on>Finance</span><span>Account</span></div><div class="m-main">
-<div class="m-h">Payment · Add balance</div>
-<div class="m-bal"><div class="m-card"><div class="m-k">Account balance</div><div class="m-v">$5,000.00 <small>+$5,000</small></div></div>
-<div class="m-card"><div class="m-k">Cashback this quarter</div><div class="m-v">$150.00</div></div></div>
-<div class="m-card"><div class="m-f"><label>Top-up amount (USD)</label><div class="m-in foc">5,000</div></div>
-<div class="m-f" style="margin-top:10px"><label>Payment method</label></div>
-<div class="m-pay"><span>Bank transfer</span><span class="on">Payoneer</span><span>USDT</span><span>Card</span></div>
-<div class="m-sum"><span>Top-up</span><span>$5,000.00</span></div><div class="m-sum"><span>Service fee</span><span>Agency rate</span></div>
-<div class="m-sum t"><span>Ad balance after top-up</span><span>$5,000.00</span></div>
-<div class="m-row"><span class="m-btn">Confirm top-up</span></div></div>
-<div class="m-toast"><span class="m-dot ok"></span>Ad account active · Ready to launch</div>
+<div class="m-h">Payment · Billing setup</div>
+<div class="m-bal"><div class="m-card"><div class="m-k">Billing type</div><div class="m-v" style="font-size:15px">Postpaid <small>Spend first, pay later</small></div></div>
+<div class="m-card"><div class="m-k">Commission</div><div class="m-v">$0.00</div></div></div>
+<div class="m-card"><div class="m-f"><label>Payment method</label></div>
+<div class="m-pay" style="grid-template-columns:repeat(3,1fr)"><span class="on">Visa •••• 4821</span><span>Mastercard</span><span>+ Any card</span></div>
+<div class="m-grid"><div class="m-f"><label>Card holder</label><div class="m-in">Your name</div></div><div class="m-f"><label>Expiry</label><div class="m-in foc">08 / 29</div></div></div>
+<div class="m-sum" style="margin-top:10px"><span>Account validity</span><span>Lifetime</span></div><div class="m-sum"><span>Cashback (month 2)</span><span style="color:#00a676;font-weight:600">Eligible ✓</span></div>
+<div class="m-row"><span class="m-btn">Save card</span></div></div>
+<div class="m-toast"><span class="m-dot ok"></span>Card added · Ad account active</div>
 </div></div></div></div>
         <div class="step-panel" id="p3" role="tabpanel" hidden><div class="mock" style="width:640px;height:470px"><div class="m-bar"><i></i><i></i><i></i><div class="m-url">ads-manager / agency / your-account</div></div><div class="m-top"><div class="m-brand"><b></b>Ads Manager</div><div class="m-tabs"><span>Dashboard</span><span class=on>Campaign</span><span>Tools</span><span>Analytics</span></div><div class="m-av"></div></div><div class="m-body"><div class="m-side"><span>Dashboard</span><span class=on>Campaign</span><span>Assets</span><span>Finance</span><span>Account</span></div><div class="m-main"><div class="m-split"><div>
 <div class="m-h">Create campaign</div>
@@ -561,9 +611,9 @@ section{padding:80px 0}
 <div class="win" style="left:40px;top:40px;width:300px;height:330px;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.18)">
 <div style="padding:12px 14px;border-bottom:1px solid #eeeff1;display:flex;align-items:center;gap:10px"><span class="ic r" style="border-radius:50%">AM</span><span><b style="font-size:12px">Your account manager</b><br><span class="meta"><span style="color:#00c48c">●</span> Online · replies in minutes</span></span></div>
 <div style="flex:1;padding:12px 14px;display:flex;flex-direction:column;gap:8px;background:#fafafa">
-<div class="bub me">Launching tomorrow. Can you add $5,000 to my ad account?</div><div class="meta" style="align-self:flex-end">10:02</div>
-<div class="bub them">Done ✅ Balance is updated and your account is ready to go.</div><div class="meta">10:04</div>
-<div class="bub them">I also checked your creatives against the ad policies, all good 👍</div></div>
+<div class="bub me">How do I connect TikTok Pixel to my Shopify store?</div><div class="meta" style="align-self:flex-end">10:02</div>
+<div class="bub them">Easy ✅ I just sent you the step-by-step video. It takes 5 minutes.</div><div class="meta">10:04</div>
+<div class="bub them">Also included: the full TikTok Ads course 🎓</div></div>
 <div style="padding:9px 14px;border-top:1px solid #eeeff1"><div class="m-in" style="color:#b7b8bd">Type a message…</div></div></div>
 <div class="win" style="left:270px;top:250px;width:250px;padding:14px;box-shadow:0 24px 60px rgba(0,0,0,.18)"><div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:12px">Account health</b><span class="badge-s grn">Excellent</span></div>
 <div style="height:8px;border-radius:4px;background:#eeeff1;margin:10px 0 12px"><div style="width:92%;height:100%;border-radius:4px;background:linear-gradient(90deg,#00c48c,#25c7c2)"></div></div>
@@ -597,11 +647,13 @@ section{padding:80px 0}
     <details open><summary>ما هو حساب TikTok Agency الإعلاني؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
       <div class="ans">هو نوع خاص من الحسابات الإعلانية يُمنح لشركاء TikTok المعتمدين، ويوفّر مرونة أكبر، ووصولًا إلى أسواق مقيّدة، واستقرارًا أعلى، ودعمًا مخصصًا، مما يتيح للمعلنين تشغيل حملات في مناطق متعددة بقيود أقل مقارنةً بالحسابات الشخصية أو التجارية العادية.</div></details>
     <details><summary>كم تبلغ تكلفة حساب TikTok Agency؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-      <div class="ans">تعتمد التكلفة على رسوم الخدمة والضرائب، إذ لا يُباع هذا الحساب بل يُؤجَّر مقابل نسبة من الإنفاق الإعلاني. وكلما ارتفع إنفاقك انخفضت نسبة الرسوم. <!-- حدّد نسبتك هنا --></div></details>
+      <div class="ans">السعر اليوم <bdi dir="ltr">5500</bdi> دج (<bdi dir="ltr">$22</bdi>) فقط، صالح مدى الحياة وبدون عمولة على إنفاقك الإعلاني. ومعه بونيس مجاني: فيديو دعم خطوة بخطوة، ربط TikTok Pixel مع YouCan وWordPress وShopify، كورس شامل لإعلانات TikTok، وطريقة إنشاء حملة رسائل احترافية.</div></details>
     <details><summary>ما خيارات الدفع المتاحة؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-      <div class="ans">نوفّر عدة طرق دفع مرنة مثل التحويل البنكي وPayoneer وUSDT. نقبل المدفوعات فقط عبر نظام الفوترة الرسمي على موقعنا، لذا احذر من أي جهة تطلب منك التحويل إلى حسابات شخصية.</div></details>
-    <details><summary>ماذا يحدث إذا تم إيقاف حسابي؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-      <div class="ans">نتواصل فورًا مع TikTok لتقديم طلب استئناف، وعادةً ما يعود الحساب للعمل خلال أيام قليلة.</div></details>
+      <div class="ans">الحساب يدعم جميع البطاقات، ويعمل بنفس نظام فايسبوك: تخدم ومن بعد تخلّص، أي تدفع بعد ما تصرف على إعلاناتك.</div></details>
+    <details><summary>كيف يعمل الـ Cashback؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div class="ans">اصرف بين <bdi dir="ltr">$200</bdi> إلى <bdi dir="ltr">$6000</bdi> في الشهر الأول و TikTok يرجعهالك في الشهر الثاني، مع عديد من الهدايا على مدار السنة.</div></details>
+    <details><summary>هل يوجد ضمان؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div class="ans">الضمان يكون عند غلق الحساب فقط. لا يوجد ضمان على الـ Cashback.</div></details>
     <details><summary>هل يمكن لحساب Agency استهداف كل الأسواق؟<svg width="23" height="24" viewBox="0 0 23 24" fill="none"><path d="M6 15.5 11.5 10l5.5 5.5" stroke="#bfbaba" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
       <div class="ans">إلى حد كبير نعم؛ يمكنه استهداف معظم الأسواق التي تدعمها إعلانات TikTok. تواصل معنا لمعرفة إن كان سوقك المستهدف متاحًا.</div></details>
   </div>
@@ -611,9 +663,9 @@ section{padding:80px 0}
 <section class="cta" id="contact">
   <div class="container">
     <div class="cta-copy">
-      <h2>أطلق إعلاناتك على TikTok خلال دقائق</h2>
-      <p>جهّز حساب Agency الخاص بك وابدأ حملاتك بدعم كامل.</p>
-      <a href="mailto:hello@example.com" class="btn btn--light">ابدأ الآن</a>
+      <h2>تواصل معنا الآن وخذ عرضك في نفس اليوم 📩</h2>
+      <p>حساب TikTok Agency بـ <bdi dir="ltr">5500</bdi> دج (<bdi dir="ltr">$22</bdi>) فقط، بدون عمولة وصالح مدى الحياة، مع Cashback وبونيس مجاني.</p>
+      <a href="mailto:hello@example.com" class="btn btn--light">تواصل معنا الآن</a>
     </div>
     <div class="cta-art art" aria-hidden="true" style="aspect-ratio:360/300"><div class="mock" style="width:360px;height:300px">
 <div style="position:absolute;left:110px;top:0"><div class="phone" style="width:150px;height:300px;flex:none"><div class="screen" style="background:linear-gradient(160deg,#121212 0,#3a1416 50%,#fe2c55 100%)"><div class="feed">Following &nbsp; <u>For You</u></div><div class="prod" style="left:27px;top:81px"></div><div class="rail"><i class="av"></i><i class="hr"></i>8.9K<i></i>318<i></i>Share</div><div class="cap"><b>@yourbrand</b>Launch day! Tap to shop. <em>Sponsored</em></div><div class="cta-bar">Shop now ›</div></div></div></div>
